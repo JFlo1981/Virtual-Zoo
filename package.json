@@ -1,0 +1,29 @@
+{
+  "name": "virtual-zoo",
+  "version": "1.0.0",
+  "description": "Group Project #2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JFlo1981/Virtual-Zoo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JFlo1981/Virtual-Zoo/issues"
+  },
+  "homepage": "https://github.com/JFlo1981/Virtual-Zoo#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  }
+}
