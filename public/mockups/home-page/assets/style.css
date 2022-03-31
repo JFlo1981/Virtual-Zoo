@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.cam-results-container {
+  border: 2px solid #f00;
+  width: 100%;
+  margin: auto;
+}
+
+.camThumbnails {
+  height: 200px;
+  width: 300px;
+}
+
+/* Flex the slide div (allows 3 images per slide) */
+.set-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.scrollButtons {
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+}
+
+/* Position the next & previous buttons to the right */
+.set-right {
+  position: absolute;
+  right: 0px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.previous:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

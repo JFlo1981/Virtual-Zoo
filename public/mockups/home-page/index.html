@@ -1,1 +1,134 @@
 <!-- INSERT HTML FOR THE HOME PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- Font Awesome! -->
+    <script
+      src="https://kit.fontawesome.com/1e188ab330.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Live cam-results container -->
+    <div id="live" class="cam-results-container">
+      <!-- Next and previous buttons -->
+      <div class="set-right">
+        <button id="previous" class="scrollButtons">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="next" class="scrollButtons">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <!-- Slide div: holds 3 images w/ links -->
+      <div class="live-cam-groups" style="margin-top: 30px">
+        <div class="set-flex">
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/lion.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/turtle.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/zebra.png" class="camThumbnails"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide div: holds 3 images w/ links -->
+      <div class="live-cam-groups" style="margin-top: 30px">
+        <div class="set-flex">
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/lion.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/zebra.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/turtle.png" class="camThumbnails"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aquatic cam-results container -->
+    <div id="aquatic" class="cam-results-container2">
+      <div class="set-right">
+        <!-- Next and previous buttons -->
+        <button id="previous2" class="scrollButtons">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="next2" class="scrollButtons">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <!-- Slide div: holds 3 images w/ links -->
+      <div class="aquatic-cam-groups" style="margin-top: 30px">
+        <div class="set-flex">
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/lion.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/zebra.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/turtle.png" class="camThumbnails"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide div: holds 3 images w/ links -->
+      <div class="aquatic-cam-groups" style="margin-top: 30px">
+        <div class="set-flex">
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/turtle.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/lion.png" class="camThumbnails"
+            /></a>
+          </div>
+          <div>
+            <a href="https://localhost3001/singlevideo"
+              ><img src="./assets/images/zebra.png" class="camThumbnails"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!-- 
+    
+    NOTES:
+
+    - In application, each scroll bar will need to have images populated to a div, and multiple divs per scroll
+    - Partials?
+
+    -->
