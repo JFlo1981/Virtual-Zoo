@@ -8,6 +8,11 @@
   background-size: cover;
 }
 
+.homepageCont {
+  background-color: black;
+  padding-bottom: 100px;
+}
+
 #home-hero {
   margin-top: 150px;
   margin-bottom: 80px;
@@ -25,7 +30,9 @@ h1 {
 
 /* Slideshow container */
 .cam-results-container,
-.cam-results-container2 {
+.cam-results-container2,
+.cam-results-container3,
+.cam-results-container4 {
   border: 2px solid transparent;
   width: 100%;
   margin: auto;
@@ -60,6 +67,6 @@ h1 {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.scrollButtons:hover {
+/* .scrollButtons:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
+} */

@@ -1,7 +1,12 @@
 var previousEl = document.getElementById("previous");
-var nextEl = document.getElementById("next");
 var previous2El = document.getElementById("previous2");
+var previous3El = document.getElementById("previous3");
+var previous4El = document.getElementById("previous4");
+
+var nextEl = document.getElementById("next");
 var next2El = document.getElementById("next2");
+var next3El = document.getElementById("next3");
+var next4El = document.getElementById("next4");
 
 // console.log(element, element2);
 function allGroups() {
@@ -9,6 +14,8 @@ function allGroups() {
   // Calls show groups to initially format the scrolls section on page load
   showLiveCams(camGroupIndex);
   showAquaticCams(camGroupIndex);
+  showAfricaCams(camGroupIndex);
+  showArcticCams(camGroupIndex);
 
   // Next/previous controls
   function moveGroups(groupNumber, parentID) {
@@ -29,6 +36,28 @@ function allGroups() {
   // Display the aquatic cams on page load
   function showAquaticCams(camGroupIndex) {
     let cams = document.getElementsByClassName("aquatic-cam-groups");
+    // hides the cam groups that are not being displayed
+    for (i = 0; i < cams.length; i++) {
+      cams[i].style.display = "none";
+    }
+    // displays the current cam group
+    cams[camGroupIndex - 1].style.display = "block";
+  }
+
+  // Display the aquatic cams on page load
+  function showAfricaCams(camGroupIndex) {
+    let cams = document.getElementsByClassName("africa-cam-groups");
+    // hides the cam groups that are not being displayed
+    for (i = 0; i < cams.length; i++) {
+      cams[i].style.display = "none";
+    }
+    // displays the current cam group
+    cams[camGroupIndex - 1].style.display = "block";
+  }
+
+  // Display the aquatic cams on page load
+  function showArcticCams(camGroupIndex) {
+    let cams = document.getElementsByClassName("arctic-cam-groups");
     // hides the cam groups that are not being displayed
     for (i = 0; i < cams.length; i++) {
       cams[i].style.display = "none";
@@ -73,6 +102,22 @@ function allGroups() {
   });
   // event listener for Next button
   next2El.addEventListener("click", function buttonHandler(event) {
+    moveGroups(1, event.target.parentElement.parentElement.id);
+  });
+  // event listener for Previous button
+  previous3El.addEventListener("click", function buttonHandler(event) {
+    moveGroups(-1, event.target.parentElement.parentElement.id);
+  });
+  // event listener for Next button
+  next3El.addEventListener("click", function buttonHandler(event) {
+    moveGroups(1, event.target.parentElement.parentElement.id);
+  });
+  // event listener for Previous button
+  previous4El.addEventListener("click", function buttonHandler(event) {
+    moveGroups(-1, event.target.parentElement.parentElement.id);
+  });
+  // event listener for Next button
+  next4El.addEventListener("click", function buttonHandler(event) {
     moveGroups(1, event.target.parentElement.parentElement.id);
   });
 }
