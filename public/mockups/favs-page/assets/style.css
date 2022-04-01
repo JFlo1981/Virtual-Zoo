@@ -69,3 +69,21 @@
   color: white;
   font-family: "Raleway", sans-serif;
 }
+
+/* STYLES TO NAV BAR */
+nav {
+  background-color: blue;
+  position: fixed;
+  right: 0px;
+}
+
+nav li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-right: 50px;
+  font-family: "Raleway", sans-serif;
+}
