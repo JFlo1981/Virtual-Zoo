@@ -21,9 +21,7 @@
   <body>
     <!-- HOMEPAGE BACKGROUND/WELCOME -->
     <section class="home-page">
-      <nav>
-        <p>l</p>
-      </nav>
+      <!-- <nav></nav> -->
       <div id="home-hero" class="w-50 ml-5">
         <p class="text-secondary">Welcome, "Username"</p>
         <h1 class="text-light">
@@ -42,10 +40,18 @@
         <h2 class="text-light ml-5 mt-5">Live Cams</h2>
         <!-- Next and previous buttons -->
         <div class="set-right">
-          <button id="prevLive" class="scrollButtons">
+          <button
+            id="prevLive"
+            class="scrollButtons"
+            onclick='moveGroups(-1, "live")'
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button id="nextLive" class="scrollButtons">
+          <button
+            id="nextLive"
+            class="scrollButtons"
+            onclick='moveGroups(1, "live")'
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -99,6 +105,20 @@
             </div>
           </div>
         </div>
+        <div class="live-cam-groups" style="margin-top: 70px">
+          <div class="set-flex">
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/red.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/turtle.png" class="camThumbnails"
+              /></a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -108,10 +128,18 @@
         <h2 class="text-light ml-5 mt-5">Aquatic Cams</h2>
         <div class="set-right">
           <!-- Next and previous buttons -->
-          <button id="prevAquatic" class="scrollButtons">
+          <button
+            id="prevAquatic"
+            class="scrollButtons"
+            onclick='moveGroups(-1, "aquatic")'
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button id="nextAquatic" class="scrollButtons">
+          <button
+            id="nextAquatic"
+            class="scrollButtons"
+            onclick='moveGroups(1, "aquatic")'
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -172,10 +200,18 @@
         <h2 class="text-light ml-5 mt-5">Africa Cams</h2>
         <div class="set-right">
           <!-- Next and previous buttons -->
-          <button id="prevAfrica" class="scrollButtons">
+          <button
+            id="prevAfrica"
+            class="scrollButtons"
+            onclick='moveGroups(-1, "africa")'
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button id="nextAfrica" class="scrollButtons">
+          <button
+            id="nextAfrica"
+            class="scrollButtons"
+            onclick='moveGroups(1, "africa")'
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -236,10 +272,18 @@
         <h2 class="text-light ml-5 mt-5">Arctic Cams</h2>
         <div class="set-right">
           <!-- Next and previous buttons -->
-          <button id="prevArctic" class="scrollButtons">
+          <button
+            id="prevArctic"
+            class="scrollButtons"
+            onclick='moveGroups(-1, "arctic")'
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button id="nextArctic" class="scrollButtons">
+          <button
+            id="nextArctic"
+            class="scrollButtons"
+            onclick='moveGroups(1, "arctic")'
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
