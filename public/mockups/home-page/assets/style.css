@@ -16,12 +16,6 @@
 #home-hero {
   margin-top: 150px;
   margin-bottom: 80px;
-  /* border: 10px solid red; */
-}
-
-.cam-scroll {
-  height: 350px;
-  margin-top: 100px;
 }
 
 h1 {
@@ -29,10 +23,10 @@ h1 {
 }
 
 /* Slideshow container */
-.cam-results-container,
-.cam-results-container2,
-.cam-results-container3,
-.cam-results-container4 {
+.live-cams-container,
+.aquatic-cams-container,
+.africa-cams-container,
+.arctic-cams-container {
   border: 2px solid transparent;
   width: 100%;
   margin: auto;
