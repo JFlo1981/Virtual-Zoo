@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style.css" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <!-- Font Awesome! -->
     <script
       src="https://kit.fontawesome.com/1e188ab330.js"
@@ -14,59 +19,87 @@
     ></script>
   </head>
   <body>
-    <!-- Live cam-results container -->
-    <div id="live" class="cam-results-container">
-      <!-- Next and previous buttons -->
-      <div class="set-right">
-        <button id="previous" class="scrollButtons">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button id="next" class="scrollButtons">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
+    <section class="home-page">
+      <nav>
+        <p>l</p>
+      </nav>
+      <div id="home-hero" class="w-50 ml-5">
+        <p class="text-secondary">Welcome, "Username"</p>
+        <h1 class="text-light">
+          Watch Your Favorite Animals <br />
+          Live From a Zoo Near You
+        </h1>
+        <p class="text-secondary w-75">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+          adipisci fugit quas quia assumenda, facilis non reprehenderit
+          repudiandae.
+        </p>
       </div>
-      <!-- Slide div: holds 3 images w/ links -->
-      <div class="live-cam-groups" style="margin-top: 30px">
-        <div class="set-flex">
-          <div>
-            <a href="https://localhost3001/singlevideo"
-              ><img src="./assets/images/lion.png" class="camThumbnails"
-            /></a>
-          </div>
-          <div>
-            <a href="https://localhost3001/singlevideo"
-              ><img src="./assets/images/turtle.png" class="camThumbnails"
-            /></a>
-          </div>
-          <div>
-            <a href="https://localhost3001/singlevideo"
-              ><img src="./assets/images/zebra.png" class="camThumbnails"
-            /></a>
-          </div>
-        </div>
-      </div>
-      <!-- Slide div: holds 3 images w/ links -->
-      <div class="live-cam-groups" style="margin-top: 30px">
-        <div class="set-flex">
-          <div>
-            <a href="https://localhost3001/singlevideo"
-              ><img src="./assets/images/lion.png" class="camThumbnails"
-            /></a>
-          </div>
-          <div>
-            <a href="https://localhost3001/singlevideo"
-              ><img src="./assets/images/zebra.png" class="camThumbnails"
-            /></a>
-          </div>
-          <div>
-            <a href="https://localhost3001/singlevideo"
-              ><img src="./assets/images/turtle.png" class="camThumbnails"
-            /></a>
-          </div>
-        </div>
-      </div>
-    </div>
 
+      <!-- Live cam-results container -->
+      <div id="live" class="cam-results-container">
+        <h2 class="text-light ml-5 mt-5">Live Cams</h2>
+        <!-- Next and previous buttons -->
+        <div class="set-right">
+          <button id="previous" class="scrollButtons">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button id="next" class="scrollButtons">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <!-- Slide div: holds 3 images w/ links -->
+        <div class="live-cam-groups" style="margin-top: 70px">
+          <div class="set-flex">
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/lion.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/turtle.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/zebra.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/zebra.png" class="camThumbnails"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide div: holds 3 images w/ links -->
+        <div class="live-cam-groups" style="margin-top: 70px">
+          <div class="set-flex">
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/lion.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/zebra.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/turtle.png" class="camThumbnails"
+              /></a>
+            </div>
+            <div>
+              <a href="https://localhost3001/singlevideo"
+                ><img src="./assets/images/zebra.png" class="camThumbnails"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Aquatic cam-results container -->
     <div id="aquatic" class="cam-results-container2">
       <div class="set-right">
@@ -79,7 +112,7 @@
         </button>
       </div>
       <!-- Slide div: holds 3 images w/ links -->
-      <div class="aquatic-cam-groups" style="margin-top: 30px">
+      <div class="aquatic-cam-groups" style="margin-top: 70px">
         <div class="set-flex">
           <div>
             <a href="https://localhost3001/singlevideo"
@@ -99,7 +132,7 @@
         </div>
       </div>
       <!-- Slide div: holds 3 images w/ links -->
-      <div class="aquatic-cam-groups" style="margin-top: 30px">
+      <div class="aquatic-cam-groups" style="margin-top: 70px">
         <div class="set-flex">
           <div>
             <a href="https://localhost3001/singlevideo"
