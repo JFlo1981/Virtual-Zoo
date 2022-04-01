@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+/* STYLES TO HOMEPAGE */
+.home-page {
+  height: 100vh;
+  background-image: url(./images/homepage.png);
+  background-size: cover;
+}
+
+.homepageCont {
+  background-color: black;
+  padding-bottom: 100px;
+}
+
+#home-hero {
+  padding-top: 150px;
+  margin-bottom: 80px;
+}
+
+/* Slideshow container */
+.live-cams-container,
+.aquatic-cams-container,
+.africa-cams-container,
+.arctic-cams-container {
+  border: 2px solid transparent;
+  width: 100%;
+  margin: auto;
+}
+
+.camThumbnails {
+  height: 200px;
+  width: 300px;
+  margin-left: 40px;
+}
+
+/* Flex the slide div (allows 3 images per slide) */
+.set-flex {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+}
+
+.scrollButtons {
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+/* Position the next & previous buttons to the right */
+.set-right {
+  position: absolute;
+  right: 0px;
+  border: 2px solid transparent;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/* .scrollButtons:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+
+.favorites-h1 {
+  text-align: center;
+  padding-top: 125px;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
