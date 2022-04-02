@@ -1,32 +1,35 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoolander</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoolander</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-    <h1>
-      <a href="/">Zoolander</a>
-    </h1>
-    <nav>
-      <a href="/login">login</a>
-    </nav>
-  </header>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="/">Zoolander</a>
+        </h1>
+        <nav>
+          <a href="/login">login</a>
+        </nav>
+        <nav>
+          <button id="logout" class="btn-no-style">logout</button>
+          <a href="/login">login</a>
+        </nav>
+      </header>
 
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
-  </div>
-
-</body>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        Thanks for visiting!
+      </footer>
+    </div>
+    <script src="/javascript/logout.js"></script>
+  </body>
 
 </html>
