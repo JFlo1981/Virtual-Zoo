@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+.landingPage {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../images/landingpage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* STYLES TO HOMEPAGE */
+.favoritespage,
+.home-page {
+  background-color: black;
+  padding-bottom: 100px;
+}
+
+#home-hero {
+  width: 100%;
+  background-image: url(../images/homepage.png);
+  background-size: cover;
+  padding-top: 125px;
+  padding-bottom: 150px;
+}
+
+/* Slideshow container */
+.scrollButtons {
+  cursor: pointer;
+  padding: 15px;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+/* STYLES TO NAV BAR */
+nav {
+  width: 100%;
+  height: 50px;
+  background: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9220281862745098) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0.9304315476190477) 100%
+  );
+  position: sticky;
+  top: 0;
+}
+
+nav li {
+  display: inline;
+  padding: 10px;
+}
+
+.navOptions {
+  float: right;
+  padding-right: 40px;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+
+form {
+  float: left;
+  margin-left: 20px;
+  background-color: #eeeeee88;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+}
+
+.searchBar {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #d9d9d9;
+  border: none;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: #cccccc;
+}
+
+.searchButton {
+  color: white;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid transparent;
+}
+
+/* STYLES TO FAVORITES PAGE */
+.favorites-h1 {
+  text-align: center;
+  padding-top: 70px;
+  color: #d6d6d6;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 100%;
+  }
+
+  .navOptions {
+    margin-top: 10px;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .landingPage {
+    width: 100%;
+    background-image: url(./images/mobilehomepage.png);
+    background-size: cover;
+    padding-top: 125px;
+    padding-bottom: 150px;
+  }
+}
