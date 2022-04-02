@@ -62,3 +62,60 @@
 /* .scrollButtons:hover {
   background-color: rgba(0, 0, 0, 0.8);
 } */
+
+/* STYLES TO NAV BAR */
+nav {
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9220281862745098) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0.9304315476190477) 100%
+  );
+  position: fixed;
+  /* right: 0px; */
+}
+
+nav li {
+  display: inline;
+  padding: 10px;
+}
+
+.navOptions {
+  float: right;
+  padding-right: 40px;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+
+form {
+  float: left;
+  margin-left: 20px;
+  background-color: #eeeeee88;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+}
+
+.searchBar {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #d9d9d9;
+  border: none;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: #cccccc;
+}
+
+.searchButton {
+  color: white;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid transparent;
+}
