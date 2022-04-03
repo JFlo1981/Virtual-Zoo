@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Video, User, Comment } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  Video.findAll({
     attributes: [
       'id',
       'post_url',
@@ -28,8 +28,8 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+    .then(dbVideoData => {
+      const postVideos = dbVideoData.map(post => post.get({ plain: true }));
 
       res.render('homepage', {
         posts,
@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-  Post.findOne({
+  Video.findOne({
     where: {
       id: req.params.id
     },
@@ -69,14 +69,14 @@ router.get('/post/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbVideoData => {
+      if (!dbVideoData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
 
       // serialize the data
-      const post = dbPostData.get({ plain: true });
+      const post = dbVideoData.get({ plain: true });
 
       // pass data to template
       res.render('single-post', {

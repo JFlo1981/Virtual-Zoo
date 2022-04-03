@@ -2,6 +2,7 @@
 const Video = require('./Video');
 const User = require('./User');
 const Comment = require('./Comment');
+const Fav = require('./Fav');
 
 // create associations
 User.hasMany(Video, {

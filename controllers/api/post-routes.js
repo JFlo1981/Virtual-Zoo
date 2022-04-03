@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Comment, Vote } = require('../../models');
+const { Video, User, Comment, Fav } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  Video.findAll({
     attributes: [
       'id',
       'post_url',
@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbVideoData => res.json(dbVideoData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Post.findOne({
+  Video.findOne({
     where: {
       id: req.params.id
     },
@@ -63,12 +63,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbVideoData => {
+      if (!dbVideoData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbVideoData);
     })
     .catch(err => {
       console.log(err);
@@ -78,12 +78,12 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
+  Video.create({
     title: req.body.title,
     post_url: req.body.post_url,
     user_id: req.body.user_id
   })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbVideoData => res.json(dbVideoData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -94,7 +94,7 @@ router.put('/upvote', (req, res) => {
   // make sure the session exists first
   if (req.session) {
     // pass session id along with all destructured properties on req.body
-    Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+    Video.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
       .then(updatedVoteData => res.json(updatedVoteData))
       .catch(err => {
         console.log(err);
@@ -104,7 +104,7 @@ router.put('/upvote', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  Post.update(
+  Video.update(
     {
       title: req.body.title
     },
@@ -115,11 +115,11 @@ router.put('/:id', (req, res) => {
     }
   )
     .then(dbPostData => {
-      if (!dbPostData) {
+      if (!dbVideoData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbVideoData);
     })
     .catch(err => {
       console.log(err);
@@ -128,17 +128,17 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  Post.destroy({
+  Video.destroy({
     where: {
       id: req.params.id
     }
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbVideoData => {
+      if (!dbVideoData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbVideoData);
     })
     .catch(err => {
       console.log(err);
