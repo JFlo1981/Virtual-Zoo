@@ -11,7 +11,7 @@ body {
 .heroImage {
     height: 100%;
     width: 25%;
-    background-image: url(hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg);
+    background-image: url(../images/hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg);
     background-size:cover;
     background-position:center;
     background-position:600px;
