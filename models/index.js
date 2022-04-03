@@ -1,19 +1,19 @@
 // import all models
-const Post = require('./Video');
+const Video = require('./Video');
 const User = require('./User');
 const Comment = require('./Comment');
 
 // create associations
-User.hasMany(Post, {
+User.hasMany(Video, {
   foreignKey: 'user_id'
 });
 
-Post.belongsTo(User, {
+Video.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
-User.belongsToMany(Post, {
+User.belongsToMany(Video, {
   through: Vote,
   as: 'voted_posts',
 
@@ -21,7 +21,7 @@ User.belongsToMany(Post, {
   onDelete: 'SET NULL'
 });
 
-Post.belongsToMany(User, {
+Video.belongsToMany(User, {
   through: Vote,
   as: 'voted_posts',
   foreignKey: 'post_id',
@@ -33,7 +33,7 @@ Comment.belongsTo(User, {
   onDelete: 'SET NULL'
 });
 
-Comment.belongsTo(Post, {
+Comment.belongsTo(Video, {
   foreignKey: 'post_id',
   onDelete: 'SET NULL'
 });
@@ -43,8 +43,8 @@ User.hasMany(Comment, {
   onDelete: 'SET NULL'
 });
 
-Post.hasMany(Comment, {
+Video.hasMany(Comment, {
   foreignKey: 'post_id'
 });
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Video, Comment };
