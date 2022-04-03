@@ -2,3 +2,22 @@
     padding: 0px;
     margin: 0px;
 }
+body {
+    height: 600px;
+    align-items: center;
+    display: flex;
+    border: 5px #1e5288 solid;
+}
+.heroImage {
+    height: 100%;
+    width: 25%;
+    background-image: url(hans-jurgen-mager-qQWV91TTBrE-unsplash.jpg);
+    background-size:cover;
+    background-position:center;
+    background-position:600px;
+    border-right:3px #1e5288 solid;
+}
+#Form {
+    width: 50%;
+    margin: 0px auto 0px auto;
+}
