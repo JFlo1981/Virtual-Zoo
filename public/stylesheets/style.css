@@ -42,6 +42,7 @@ nav {
   background: rgb(0, 0, 0);
   background-color: #1e1e1f;
   position: sticky;
+  z-index: unset;
   top: 0;
 }
 
@@ -87,49 +88,6 @@ form {
   border: 2px solid transparent;
 }
 
-/* STYLES HOMEPAGE VIDEO SCROLLS */
-
-.category-scroll {
-  overflow: auto;
-  white-space: nowrap;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.category-pictures {
-  display: inline-block;
-  padding: 10px;
-}
-
-.video-image {
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 241px;
-  width: 360px;
-}
-
-/* width */
-::-webkit-scrollbar {
-  height: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px #d6d6d6;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #9ca8ba;
-}
-
 /* STYLES TO FAVORITES PAGE */
 .favorites-h1 {
   text-align: center;
@@ -139,23 +97,33 @@ form {
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .form {
-    width: 100%;
-  }
+/* STYLES TO CAROUSELS */
 
-  .navOptions {
-    margin-top: 10px;
-    float: left;
-  }
+.categoryTitle {
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: white;
 }
 
-@media screen and (max-width: 560px) {
-  .landingPage {
-    width: 100%;
-    background-image: url(./images/mobilehomepage.png);
-    background-size: cover;
-    padding-top: 125px;
-    padding-bottom: 150px;
-  }
+.videoThumbnail {
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+}
+
+.categorySlides .swiper-button-prev,
+.categorySlides .swiper-button-next {
+  color: white;
+  top: 40px;
+  height: 80%;
+  width: 40px;
+  border-radius: 50px;
+}
+
+.categorySlides .swiper-button-prev:hover,
+.categorySlides .swiper-button-next:hover {
+  background-color: #eeeeee88;
+  border: 2px solid #d9d9d9;
 }
