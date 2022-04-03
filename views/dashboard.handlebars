@@ -1,49 +1,35 @@
-<!-- Nav Bar -->
-    <nav style="padding-top: 10px">
-      <form action="search">
-        <input
-          type="text"
-          class="searchBar"
-          placeholder="Search Cams"
-          name="search"
+<section class="favoritespage" style="background-color: #111112">
+  <div class="favorites_Header">
+    <div class="container">
+      <div
+        class="row d-flex justify-content-center "
+        style="padding-top: 50px"
+      >
+        <h1 class="col-12 category_Title" >
+          "User" Favorites Dashboard
+        </h1>
+        <p class="category_page_description col-8">
+          All of cutest, wildest, funniest, bravest, adorable animals you
+          have saved. A collection of your most-loved critters.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h2 class="category_sub_title">Visit Now</h2>
+  <hr style="border-top: 1px solid #666666ff" />
+  <div class="container">
+    <div class="row d-flex justify-content-between">
+
+        {{#each this}}
+      <div id="category-video-card" class="col-lg-4 p-3">
+        <img
+          src="{{video.thumbnail}}"
+          class="col-12 p-3"
+          style="border-radius: 25px"
         />
-        <button class="searchButton">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-      <div class="navOptions">
-        <ul>
-          <li>
-            <a href="/" class="text-light">Home</a>
-          </li>
-          <li>
-            <a href="/dashboard" class="text-light">Favorites</a>
-          </li>
-          <li>
-            <a href="/login" class="text-light">Donate</a>
-          </li>
-          <li>
-            <a href="/shop" class="text-light">Shop</a>
-          </li>
-          <li>
-            <a href="/login" class="text-light">Log Out</a>
-          </li>
-        </ul>
       </div>
-    </nav>
-    <section class="favoritespage">
-      <h1 class="favorites-h1">"User" Favorites Dashboard</h1>
-      <div class="container" style="background-color: #111112; border-radius: 15px">
-        <div class="row d-flex justify-content-between">
-          <div class="col-lg-6 p-3">
-            <img src="images/panda.png" class="col-12 p-3" />
-          </div>
-          <div class="col-lg-6 p-3">
-            <img src="images/red.png" class="col-12 p-3" />
-          </div>
-          <div class="col-lg-6 p-3">
-            <img src="images/turtle.png" class="col-12 p-3" />
-          </div>
-        </div>
-      </div>
-    </section>
+      {{/each}}
+      
+    </div>
+  </div>
+</section>

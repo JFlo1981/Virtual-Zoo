@@ -9,6 +9,10 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
+router.get("/category/live", (req, res) => {
+  res.render("category");
+});
+
 module.exports = router;
 
 // Used from Jarod's branch for testing, will delete for merge w/ sandbox branch

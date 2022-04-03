@@ -1,17 +1,24 @@
 <div class="AfricaCams" style="margin: 40px 20px">
   <h2 class="categoryTitle">Africa Cams</h2>
+  <hr style="border-top: 1px solid #666666ff" />
   <div class="categorySlides swiper">
     <div class="swiper-wrapper">
       <!-- Slides -->
+      {{#each this}}
       <div class="swiper-slide">
-        <a href="#">
+        <a href="{{video.id}}">
           <img
             class="videoThumbnail"
-            src="images/lion.png"
-            alt=""
+            src="{{video.thumbnail}}"
+            alt="{{video.altText}}"
           />
         </a>
+        <p class="videoInfo">
+          {{video.Title}} <br />
+          <span style="color: gray">{{video.Source}}</span>
+        </p>
       </div>
+      {{/each}}
     </div>
 
     <!-- navigation buttons -->
