@@ -36,6 +36,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// get a single video
 router.get('/:id', (req, res) => {
   Video.findOne({
     where: {
@@ -90,9 +91,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/fav', (req, res) => {
-  // make sure the session exists first
   if (req.session) {
-    // pass session id along with all destructured properties on req.body
     Video.fav({ ...req.body, user_id: req.session.user_id }, { Fav, Comment, User })
       .then(updatedFavData => res.json(updatedFavData))
       .catch(err => {

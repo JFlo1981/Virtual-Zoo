@@ -17,50 +17,6 @@ router.get("/sign-up", (req, res) => {
   res.render("sign-up");
 });
 
-// get all videos for homepage
-
-  // console.log("======================");
-  // Video.findAll({
-  //   attributes: [
-  //     "id",
-  //     "video_url",
-  //     "title",
-  //     "created_at",
-  //     [
-  //       sequelize.literal(
-  //         "(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)"
-  //       ) /*'vote_count'*/,
-  //     ],
-  //   ],
-  //   include: [
-  //     {
-  //       model: Comment,
-  //       attributes: ["id", "comment_text", "video_id", "user_id", "created_at"],
-  //       include: {
-  //         model: User,
-  //         attributes: ["username"],
-  //       },
-  //     },
-  //     {
-  //       model: User,
-  //       attributes: ["username"],
-  //     },
-  //   ],
-  // })
-  //   .then((dbVideoData) => {
-  //     const videos = dbVideoData.map((video) => video.get({ plain: true }));
-
-  //     res.render("homepage", {
-  //       videos,
-  //       loggedIn: req.session.loggedIn,
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  //   });
-
-
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");
