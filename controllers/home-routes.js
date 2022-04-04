@@ -18,8 +18,7 @@ router.get("/sign-up", (req, res) => {
 });
 
 // get all videos for homepage
-router.get("/homepage", (req, res) => {
-  res.render("homepage");
+
   // console.log("======================");
   // Video.findAll({
   //   attributes: [
@@ -60,7 +59,7 @@ router.get("/homepage", (req, res) => {
   //     console.log(err);
   //     res.status(500).json(err);
   //   });
-});
+
 
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
@@ -123,6 +122,11 @@ router.get("/video/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+// for pages to come...
+router.get("/inProgress", (req, res) => {
+  res.render("inProgress");
 });
 
 module.exports = router;
