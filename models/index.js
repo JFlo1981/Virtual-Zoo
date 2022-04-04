@@ -17,7 +17,6 @@ Video.belongsTo(User, {
 User.belongsToMany(Video, {
   through: Fav,
   as: 'fav_videos',
-
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
@@ -27,6 +26,24 @@ Video.belongsToMany(User, {
   as: 'fav_posts',
   foreignKey: 'video_id',
   onDelete: 'SET NULL'
+});
+
+Fav.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Fav.belongsTo(Video, {
+  foreignKey: 'video_id',
+  onDelete: 'SET NULL'
+});
+
+User.hasMany(Fav, {
+  foreignKey: 'user_id'
+});
+
+Video.hasMany(Fav, {
+  foreignKey: 'video_id'
 });
 
 Comment.belongsTo(User, {
