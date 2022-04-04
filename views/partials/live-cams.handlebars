@@ -5,84 +5,21 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
+       {{#each this}}
       <div class="swiper-slide">
-        <a href="#">
+        <a href="/video/{{video.id}}">
           <img
             class="videoThumbnail"
-            src="images/red.png"
-            alt=""
+            src="{{video.image}}"
+            alt="{{video.altText}}"
           />
         </a>
         <p class="videoInfo">
-          Cam title <br />
-          <span style="color: gray">Monterey Zoo 2018</span>
+          {{video.Title}} <br />
+          <span style="color: gray">{{video.Source}}</span>
         </p>
-      </div>
-      <div class="swiper-slide">
-        <a href="#">
-          <img
-            class="videoThumbnail"
-            src="images/red.png"
-            alt=""
-          />
-        </a>
-        <p class="videoInfo">
-          Cam title <br />
-          <span style="color: gray">Monterey Zoo 2018</span>
-        </p>
-      </div>
-      <div class="swiper-slide">
-        <a href="#">
-          <img
-            class="videoThumbnail"
-            src="images/red.png"
-            alt=""
-          />
-        </a>
-        <p class="videoInfo">
-          Cam title <br />
-          <span style="color: gray">Monterey Zoo 2018</span>
-        </p>
-      </div>
-      <div class="swiper-slide">
-        <a href="#">
-          <img
-            class="videoThumbnail"
-            src="images/red.png"
-            alt=""
-          />
-        </a>
-        <p class="videoInfo">
-          Cam title <br />
-          <span style="color: gray">Monterey Zoo 2018</span>
-        </p>
-      </div>
-      <div class="swiper-slide">
-        <a href="#">
-          <img
-            class="videoThumbnail"
-            src="images/red.png"
-            alt=""
-          />
-        </a>
-        <p class="videoInfo">
-          Cam title <br />
-          <span style="color: gray">Monterey Zoo 2018</span>
-        </p>
-      </div>
-      <div class="swiper-slide">
-        <a href="#">
-          <img
-            class="videoThumbnail"
-            src="images/red.png"
-            alt=""
-          />
-        </a>
-        <p class="videoInfo">
-          Cam title <br />
-          <span style="color: gray">Monterey Zoo 2018</span>
-        </p>
-      </div>
+      </div> 
+       {{/each}}
     </div>
     <!-- navigation buttons -->
     <div class="swiper-button-prev"></div>

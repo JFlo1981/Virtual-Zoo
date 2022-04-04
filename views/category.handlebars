@@ -1,32 +1,65 @@
-    <section style="background-color: #111112">
-      <div class="{{category.name}}_Header">
-        <div class="container">
-          <div
-            class="row d-flex justify-content-center"
-            style="padding-top: 50px"
-          >
-            <h1 class="col-12 category_Title" style="color: white">{{category.name}} Cameras</h1>
-            <p class="category_page_description col-8">
-              {{category.description}}
-            </p>
-          </div>
-        </div>
-      </div>
-      <h2 class="category_sub_title">Watch Now</h2>
-      <hr style="border-top: 1px solid #666666ff" />
-      <div class="container">
-        <div class="row d-flex justify-content-between">
+<nav>
+  <div class="nav-Title">
+    <p class="text-light ">Zoolander</p>
+  </div>
+  <div class="float-right" style="padding-right: 40px;">
+    <ul>
+      <li>
+        <a href="/homepage" class="text-light">Home</a>
+      </li>
+      <li>
+        <a href="/dashboard" class="text-light">Favorites</a>
+      </li>
+      <li>
+        <a href="/donate" class="text-light">Donate</a>
+      </li>
+      <li>
+        <a href="/shop" class="text-light">Shop</a>
+      </li>
+      <li>
+        <a href="/" class="text-light">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-          {{#each this}}
-          <div id="category-video-card" class="col-lg-4 p-3">
-            <img
-              src="{{video.thumbnail}}"
-              class="col-12 p-3"
-              style="border-radius: 25px"
-            />
-          </div>
-          {{/each}}
-
-        </div>
+<section style="background-color: #111112">
+  <div class="{{category.name}}_Header">
+    <div class="container">
+      <div
+        class="row d-flex justify-content-center"
+        style="padding-top: 50px"
+      >
+        <h1 class="col-12 category_Title" style="color: white">{{category.name}} Cameras</h1>
+        <p class="category_page_description col-8">
+          {{category.description}}
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+  <h2 class="category_sub_title">Watch Now</h2>
+  <hr style="border-top: 1px solid #666666ff" />
+  <div class="container">
+    <div class="row d-flex justify-content-between">
+
+      {{#each this}}
+      <div id="category-video-card" class="col-lg-4 p-3">
+        <a href="/video/{{video.id}}">
+        <img
+          src="{{video.thumbnail}}"
+          class="col-12 p-3"
+          style="border-radius: 25px"
+        />
+        </a>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander
+  Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna Learn About
+  Cool Animals And Other Stuff Too
+</footer>
