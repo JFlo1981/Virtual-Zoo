@@ -1,4 +1,4 @@
-{{> post-info post }}
+{{> video-info video }}
 
 
 {{#if loggedIn}}
@@ -9,17 +9,17 @@
 
   <div>
     <button type="submit">add comment</button>
-    <button type="button" class="upvote-btn">upvote</button>
+    <button type="button" class="fav-btn">fav</button>
   </div>
 </form>
 {{/if}}
 
-{{> comments post.comments}}
+{{> comments video.comments}}
 
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
+<script src="/javascript/fav.js"></script>
 {{/if}}
 
 {{!-- post = video --}}

@@ -25,10 +25,10 @@ Comment.init(
         key: 'id'
       }
     },
-    post_id: {
+    video_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'post',
+        model: 'video',
         key: 'id'
       }
     }

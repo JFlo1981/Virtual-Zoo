@@ -15,17 +15,17 @@ Video.belongsTo(User, {
 });
 
 User.belongsToMany(Video, {
-  through: Vote,
-  as: 'voted_posts',
+  through: Fav,
+  as: 'fav_videos',
 
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
 Video.belongsToMany(User, {
-  through: Vote,
-  as: 'voted_posts',
-  foreignKey: 'post_id',
+  through: Fav,
+  as: 'fav_posts',
+  foreignKey: 'video_id',
   onDelete: 'SET NULL'
 });
 
@@ -35,7 +35,7 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Video, {
-  foreignKey: 'post_id',
+  foreignKey: 'video_id',
   onDelete: 'SET NULL'
 });
 
@@ -45,7 +45,7 @@ User.hasMany(Comment, {
 });
 
 Video.hasMany(Comment, {
-  foreignKey: 'post_id'
+  foreignKey: 'video_id'
 });
 
-module.exports = { User, Video, Comment };
+module.exports = { User, Video, Comment, Fav };

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Video, Comment } = require('../../models');
+const { User, Video, Comment, Fav } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -21,23 +21,23 @@ router.get('/:id', (req, res) => {
     },
     include: [
       {
-        model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        model: Video,
+        attributes: ['id', 'title', 'video_url', 'created_at']
       },
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'created_at'],
         include: {
-          model: Post,
+          model: Video,
           attributes: ['title']
         }
       },
-      // {
-      //   model: Post,
-      //   attributes: ['title'],
-      //   through: Vote,
-      //   as: 'voted_posts'
-      // }
+      {
+        model: Video,
+        attributes: ['title'],
+        through: Fav,
+        as: 'fav_videos'
+      }
     ]
   })
     .then(dbUserData => {
@@ -97,7 +97,7 @@ router.post('/login', (req, res) => {
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
   
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json({ user: dbUserData, message: "You are logged in! Let's go see some animals!" });
     });
   });
 });

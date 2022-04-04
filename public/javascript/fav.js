@@ -1,14 +1,14 @@
-async function upvoteClickHandler(event) {
+async function favClickHandler(event) {
     event.preventDefault();
   
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
   
-    const response = await fetch('/api/posts/upvote', {
+    const response = await fetch('/api/videos/fav', {
         method: 'PUT',
         body: JSON.stringify({
-          post_id: id
+          video_id: id
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -21,6 +21,6 @@ async function upvoteClickHandler(event) {
         alert(response.statusText);
       }
     }
-    document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
+    document.querySelector('.fav-btn').addEventListener('click', upvoteClickHandler);
 
     // upvote is favorite button
