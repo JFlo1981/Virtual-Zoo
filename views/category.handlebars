@@ -1,0 +1,32 @@
+    <section style="background-color: #111112">
+      <div class="{{category.name}}_Header">
+        <div class="container">
+          <div
+            class="row d-flex justify-content-center"
+            style="padding-top: 50px"
+          >
+            <h1 class="col-12 category_Title" style="color: white">{{category.name}} Cameras</h1>
+            <p class="category_page_description col-8">
+              {{category.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2 class="category_sub_title">Watch Now</h2>
+      <hr style="border-top: 1px solid #666666ff" />
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+
+          {{#each this}}
+          <div id="category-video-card" class="col-lg-4 p-3">
+            <img
+              src="{{video.thumbnail}}"
+              class="col-12 p-3"
+              style="border-radius: 25px"
+            />
+          </div>
+          {{/each}}
+
+        </div>
+      </div>
+    </section>
