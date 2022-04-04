@@ -11,10 +11,10 @@
         <a href="/dashboard" class="text-light">Favorites</a>
       </li>
       <li>
-        <a href="/donate" class="text-light">Donate</a>
+        <a href="/inProgress" class="text-light">Donate</a>
       </li>
       <li>
-        <a href="/shop" class="text-light">Shop</a>
+        <a href="/inProgress" class="text-light">Shop</a>
       </li>
       <li>
         <a href="/" class="text-light">Log Out</a>
@@ -23,15 +23,21 @@
   </div>
 </nav>
 
+<!-- SEARCH FOR THE USER AND JOIN VIDEO TABLE THROUGH FAVORITES TABLE -->
+
 <section class="favoritespage" style="background-color: #111112">
-  <div class="favorites_Header">
+  <div style=" 
+  width: 100%;
+  height: 300px;
+  background-size: cover; 
+  background-image: url(../images/user_dashboard.jpg);">
     <div class="container">
       <div
         class="row d-flex justify-content-center "
         style="padding-top: 50px"
       >
         <h1 class="col-12 category_Title" >
-          "User" Favorites Dashboard
+          {{user.name}} Favorites Dashboard
         </h1>
         <p class="category_page_description col-8">
           All of cutest, wildest, funniest, bravest, adorable animals you
@@ -45,7 +51,8 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
 
-        {{#each this}}
+      <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
+      {{#each this}}
       <div id="category-video-card" class="col-lg-4 p-3">
         <a href="/video/{{video.id}}">
         <img
