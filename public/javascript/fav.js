@@ -21,6 +21,6 @@ async function favClickHandler(event) {
         alert(response.statusText);
       }
     }
-    document.querySelector('.fav-btn').addEventListener('click', upvoteClickHandler);
+    document.querySelector('.fav-btn').addEventListener('click', favClickHandler);
 
     // upvote is favorite button
