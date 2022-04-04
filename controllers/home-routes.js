@@ -125,4 +125,9 @@ router.get("/video/:id", (req, res) => {
     });
 });
 
+// for pages to come...
+router.get("/inProgress", (req, res) => {
+  res.render("inProgress");
+});
+
 module.exports = router;
