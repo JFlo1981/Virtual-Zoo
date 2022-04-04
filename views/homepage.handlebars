@@ -1,0 +1,58 @@
+<!-- HOMEPAGE BACKGROUND/WELCOME -->
+<section class="home-page">      
+
+  <div id="home-hero">
+    <div class="w-50 ml-5">
+      <p class="text-secondary">Welcome, "Username"</p>
+      <h1 class="text-light">
+        Watch Your Favorite Animals <br />
+        Live From a Zoo Near You
+      </h1>
+      <p class="text-secondary w-75">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+        adipisci fugit quas quia assumenda, facilis non reprehenderit
+        repudiandae.
+      </p>
+    </div>
+  </div>
+
+  {{> live-cams }}
+  {{> aquatic-cams }}
+  {{> africa-cams }}
+  {{> arctic-cams }}
+
+</section>
+
+<!-- swiper.js script -->
+<script>
+  var mySwiper = new Swiper(".swiper", {
+    // Optional parameters
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    freeMode: true,
+    speed: 500,
+    breakpoints: {
+      // when window width is >= 560px
+      560: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      // when window width is >= 980px
+      980: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
