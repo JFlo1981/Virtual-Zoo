@@ -140,39 +140,9 @@ footer {
   transform: scale(1.1);
 }
 
-#video-Info:hover {
+/* #video-Info:hover {
   visibility: visible;
-}
-
-.Live_Header,
-.favorites_Header,
-.Africa_Header,
-.Arctic_Header,
-.Aquatic_Header {
-  width: 100%;
-  height: 300px;
-  background-size: cover;
-}
-
-.Live_Header {
-  background-image: url(../images/live_page.png);
-}
-
-.favorites_Header {
-  background-image: url(../images/user_dashboard.jpg);
-}
-
-.Africa_Header {
-  background-image: url(../images/africa_page.png);
-}
-
-.Arctic_Header {
-  background-image: url(../images/arctic_page.png);
-}
-
-.Aquatic_Header {
-  background-image: url(../images/aquatic_page.png);
-}
+} */
 
 .category_sub_title {
   margin-top: 10px;

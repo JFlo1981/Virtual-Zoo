@@ -23,8 +23,15 @@
   </div>
 </nav>
 
+<!-- SEARCH FOR THE CATEGORY AND JOIN VIDEO TABLE THROUGH FOREIGN KEY? -->
+
 <section style="background-color: #111112">
-  <div class="{{category.name}}_Header">
+  <div style="
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-image: {{category.imagePath}};
+  ">
     <div class="container">
       <div
         class="row d-flex justify-content-center"
@@ -42,6 +49,7 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
 
+      <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
       {{#each this}}
       <div id="category-video-card" class="col-lg-4 p-3">
         <a href="/video/{{video.id}}">
