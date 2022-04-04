@@ -1,78 +1,111 @@
+const router = require("express").Router();
+const sequelize = require("../config/connection");
+const { Video, User, Comment, Fav } = require("../models");
 
-const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Video, User, Comment, Fav } = require('../models');
+// Log in route
+router.get("/", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/homepage");
+    return;
+  }
 
-// get all videos for homepage
-router.get('/', (req, res) => {
-  console.log('======================');
-  Video.findAll({
-    attributes: [
-      'id',
-      'video_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)'), /*'vote_count'*/]
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbVideoData => {
-      const videos = dbVideoData.map(video => video.get({ plain: true }));
-
-      res.render('homepage', {
-        videos,
-        loggedIn: req.session.loggedIn
-      });      
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  res.render("login");
 });
 
-router.get('/video/:id', (req, res) => {
+// Sign up route
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+});
+
+// get all videos for homepage
+
+  // console.log("======================");
+  // Video.findAll({
+  //   attributes: [
+  //     "id",
+  //     "video_url",
+  //     "title",
+  //     "created_at",
+  //     [
+  //       sequelize.literal(
+  //         "(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)"
+  //       ) /*'vote_count'*/,
+  //     ],
+  //   ],
+  //   include: [
+  //     {
+  //       model: Comment,
+  //       attributes: ["id", "comment_text", "video_id", "user_id", "created_at"],
+  //       include: {
+  //         model: User,
+  //         attributes: ["username"],
+  //       },
+  //     },
+  //     {
+  //       model: User,
+  //       attributes: ["username"],
+  //     },
+  //   ],
+  // })
+  //   .then((dbVideoData) => {
+  //     const videos = dbVideoData.map((video) => video.get({ plain: true }));
+
+  //     res.render("homepage", {
+  //       videos,
+  //       loggedIn: req.session.loggedIn,
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).json(err);
+  //   });
+
+
+// get all videos for favorites dashboard
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+
+// get all videos for a category by id
+router.get("/category/:id", (req, res) => {
+  res.render("category");
+});
+
+// get one video by id
+router.get("/video/:id", (req, res) => {
   Video.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     attributes: [
-      'id',
-      'video_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)'), /*'vote_count'*/]
+      "id",
+      "video_url",
+      "title",
+      "created_at",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)"
+        ) /*'vote_count'*/,
+      ],
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
+        attributes: ["id", "comment_text", "video_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbVideoData => {
+    .then((dbVideoData) => {
       if (!dbVideoData) {
-        res.status(404).json({ message: 'No video found with this id' });
+        res.status(404).json({ message: "No video found with this id" });
         return;
       }
 
@@ -80,25 +113,15 @@ router.get('/video/:id', (req, res) => {
       const video = dbVideoData.get({ plain: true });
 
       // pass data to template
-      res.render('single-video', {
+      res.render("single-video", {
         video,
-        loggedIn: req.session.loggedIn
-      });   
-     })
-    .catch(err => {
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
-
 module.exports = router;
-
