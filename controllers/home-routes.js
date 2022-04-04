@@ -1,7 +1,14 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  // Once the database setup is merged, pass video objects to the homepage template
+  res.render("login");
+});
+
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+});
+
+router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 

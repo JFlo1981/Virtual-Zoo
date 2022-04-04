@@ -60,13 +60,13 @@ a {
   font-family: "Raleway", sans-serif;
 }
 
-form {
+/* form {
   float: left;
   margin-left: 20px;
   background-color: #eeeeee88;
   border: 2px solid #d9d9d9;
   border-radius: 10px;
-}
+} */
 
 .searchBar {
   padding-left: 10px;
