@@ -77,7 +77,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Video.create({
     title: req.body.title,
     video_url: req.body.video_url,
