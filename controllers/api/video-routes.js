@@ -6,28 +6,28 @@ const { Video, User, Comment, Fav } = require('../../models');
 router.get('/', (req, res) => {
   console.log('======================');
   Video.findAll({
-    // attributes: [
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
-    // order: [['created_at', 'DESC']],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+    attributes: [
+      'id',
+      'video_url',
+      'title',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)'), /*'vote_count'*/]
+    ],
+    order: [['created_at', 'DESC']],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbVideoData => res.json(dbVideoData))
     .catch(err => {
@@ -41,31 +41,31 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    // attributes: [
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+    attributes: [
+      'id',
+      'video_url',
+      'title',
+      'created_at',
+    [sequelize.literal('(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)') /*, 'vote_count'*/]  
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbVideoData => {
       if (!dbVideoData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No video found with this id' });
         return;
       }
       res.json(dbVideoData);
@@ -80,7 +80,7 @@ router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Video.create({
     title: req.body.title,
-    post_url: req.body.post_url,
+    video_url: req.body.video_url,
     user_id: req.body.user_id
   })
     .then(dbVideoData => res.json(dbVideoData))
@@ -90,12 +90,12 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/upvote', (req, res) => {
+router.put('/fav', (req, res) => {
   // make sure the session exists first
   if (req.session) {
     // pass session id along with all destructured properties on req.body
-    Video.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-      .then(updatedVoteData => res.json(updatedVoteData))
+    Video.fav({ ...req.body, user_id: req.session.user_id }, { Fav, Comment, User })
+      .then(updatedFavData => res.json(updatedFavData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -116,7 +116,7 @@ router.put('/:id', (req, res) => {
   )
     .then(dbVideoData => {
       if (!dbVideoData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No video found with this id' });
         return;
       }
       res.json(dbVideoData);
@@ -135,7 +135,7 @@ router.delete('/:id', (req, res) => {
   })
     .then(dbVideoData => {
       if (!dbVideoData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No video found with this id' });
         return;
       }
       res.json(dbVideoData);

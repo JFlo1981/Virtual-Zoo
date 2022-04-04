@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Video, Comment } = require('../../models');
+const { User, Video, Comment, Fav } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Video,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: ['id', 'title', 'video_url', 'created_at']
       },
       {
         model: Comment,
@@ -32,12 +32,12 @@ router.get('/:id', (req, res) => {
           attributes: ['title']
         }
       },
-      // {
-      //   model: Post,
-      //   attributes: ['title'],
-      //   through: Vote,
-      //   as: 'voted_posts'
-      // }
+      {
+        model: Video,
+        attributes: ['title'],
+        through: Fav,
+        as: 'fav_videos'
+      }
     ]
   })
     .then(dbUserData => {

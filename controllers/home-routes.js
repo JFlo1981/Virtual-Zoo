@@ -1,38 +1,38 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Video, User, Comment } = require('../models');
+const { Video, User, Comment, Fav } = require('../models');
 
-// get all posts for homepage
+// get all videos for homepage
 router.get('/', (req, res) => {
   console.log('======================');
   Video.findAll({
-    // attributes: [
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+    attributes: [
+      'id',
+      'video_url',
+      'title',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)'), /*'vote_count'*/]
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbVideoData => {
-      const postVideos = dbVideoData.map(post => post.get({ plain: true }));
+      const videos = dbVideoData.map(video => video.get({ plain: true }));
 
       res.render('homepage', {
-        posts,
+        videos,
         loggedIn: req.session.loggedIn
       });      
     })
@@ -42,45 +42,45 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/post/:id', (req, res) => {
+router.get('/video/:id', (req, res) => {
   Video.findOne({
     where: {
       id: req.params.id
     },
-    // attributes: [
-    //   'id',
-    //   'post_url',
-    //   'title',
-    //   'created_at',
-    //   [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    // ],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+    attributes: [
+      'id',
+      'video_url',
+      'title',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)'), /*'vote_count'*/]
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbVideoData => {
       if (!dbVideoData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No video found with this id' });
         return;
       }
 
       // serialize the data
-      const post = dbVideoData.get({ plain: true });
+      const video = dbVideoData.get({ plain: true });
 
       // pass data to template
-      res.render('single-post', {
-        post,
+      res.render('single-video', {
+        video,
         loggedIn: req.session.loggedIn
       });   
      })

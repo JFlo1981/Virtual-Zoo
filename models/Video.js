@@ -1,30 +1,30 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// create our Post model
+// create our Video model
 class Video extends Model {
-  static upvote(body, models) {
-    return models.Vote.create({
+  static fav(body, models) {
+    return models.Fav.create({
       user_id: body.user_id,
-      post_id: body.post_id
+      video_id: body.video_id
     }).then(() => {
       return Video.findOne({
         where: {
-          id: body.post_id
+          id: body.video_id
         },
         attributes: [
           'id',
-          'post_url',
+          'video_url',
           'title',
           'created_at',
           [
-            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
-            'vote_count'
+            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE video.id = fav.video_id)'),
+            /*'vote_count'*/
           ]
         ],
         include: [
           {
             model: models.Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            attributes: ['id', 'comment_text', 'video_id', 'user_id', 'created_at'],
             include: {
               model: models.User,
               attributes: ['username']
@@ -49,7 +49,7 @@ Video.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    post_url: {
+    video_url: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -68,7 +68,7 @@ Video.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post'
+    modelName: 'video'
   }
 );
 
