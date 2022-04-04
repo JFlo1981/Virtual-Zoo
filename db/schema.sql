@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS zookeepr_db;
+DROP DATABASE IF EXISTS zookeepr_database;
 
-CREATE DATABASE zookeepr_db;
+CREATE DATABASE zookeepr_database;

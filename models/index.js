@@ -3,6 +3,7 @@ const Video = require('./Video');
 const User = require('./User');
 const Comment = require('./Comment');
 const Fav = require('./Fav');
+const Category = require('./Category');
 
 // create associations
 User.hasMany(Video, {
@@ -21,9 +22,9 @@ User.belongsToMany(Video, {
   onDelete: 'SET NULL'
 });
 
-Video.belongsToMany(User, {
+Video.belongsTo(User, {
   through: Fav,
-  as: 'fav_posts',
+  as: 'fav_videos',
   foreignKey: 'video_id',
   onDelete: 'SET NULL'
 });
@@ -65,4 +66,6 @@ Video.hasMany(Comment, {
   foreignKey: 'video_id'
 });
 
-module.exports = { User, Video, Comment, Fav };
+
+
+module.exports = { User, Video, Comment, Fav, Category };
