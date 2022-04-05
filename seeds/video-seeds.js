@@ -13,7 +13,7 @@ const mediadata = [
   {
     description: "LIVE! Tiny dramatic newborn rescue kittens!",
     path: "https://youtube.com/embed/QOwC0CbtJSs",
-    thumbnail: "../images/hq720-4.jpg/hq720-1.jpg",
+    thumbnail: "../images/hq720-1.jpg",
     category_id: 1,
   },
 
