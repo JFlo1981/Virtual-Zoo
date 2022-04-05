@@ -11,7 +11,7 @@
 .b0dy {
     background-color: #1f1e1f;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     
 }
 
