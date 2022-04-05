@@ -36,55 +36,23 @@
 
 /* STYLES TO NAV BAR */
 nav {
+  padding-top: 10px;
   width: 100%;
   height: 50px;
-  background: rgb(0, 0, 0);
-  background-color: #1e1e1f;
+  background: #1e1e1f;
   position: fixed;
   top: 0;
   z-index: 7;
 }
 
+.nav-Title {
+  float: left;
+  margin-left: 20px;
+}
+
 nav li {
   display: inline;
   padding: 10px;
-}
-
-.navOptions {
-  float: right;
-  padding-right: 40px;
-}
-
-a {
-  text-decoration: none;
-  font-family: "Raleway", sans-serif;
-}
-
-/* form {
-  float: left;
-  margin-left: 20px;
-  background-color: #eeeeee88;
-  border: 2px solid #d9d9d9;
-  border-radius: 10px;
-} */
-
-.searchBar {
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #d9d9d9;
-  border: none;
-  background-color: transparent;
-}
-
-::placeholder {
-  color: #cccccc;
-}
-
-.searchButton {
-  color: white;
-  background-color: transparent;
-  border-radius: 50px;
-  border: 2px solid transparent;
 }
 
 /* STYLES TO CAROUSELS */
@@ -172,39 +140,9 @@ footer {
   transform: scale(1.1);
 }
 
-#video-Info:hover {
+/* #video-Info:hover {
   visibility: visible;
-}
-
-.live_Header,
-.favorites_Header,
-.africa_Header,
-.arctic_Header,
-.aquatic_Header {
-  width: 100%;
-  height: 300px;
-  background-size: cover;
-}
-
-.live_Header {
-  background-image: url(../images/live_page.png);
-}
-
-.favorites_Header {
-  background-image: url(../images/user_dashboard.jpg);
-}
-
-.africa_Header {
-  background-image: url(../images/africa_page.png);
-}
-
-.arctic_Header {
-  background-image: url(../images/arctic_page.png);
-}
-
-.aquatic_Header {
-  background-image: url(../images/aquatic_page.png);
-}
+} */
 
 .category_sub_title {
   margin-top: 10px;
