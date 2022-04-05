@@ -1,5 +1,19 @@
-# Virtual-Zoo
- ## Group Project #2
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+
+
+# Animals Live!
+  
+Do your kids ever beg you to go to the zoo on a rainy day?
+Would you like to see wild animals in their natural habitats?
+Or maybe you just wanna see some cute puppies and kittens?
+
+Well here it is! This site has camera feeds from across the globe 
+bringing elephants, creatures of the sea and some loveable furry friends
+right into the comfort of your home... Or anywhere you take your devices!
+
+
+
+## User Story
 
 * When I go to our zoo website,
 * Then I am prompted to either log in or create an account.
@@ -27,3 +41,57 @@
 * Then my comment displays under the video, and is saved to the database.
 * When I click on “delete comment”,
 * Then my comment is removed from the database.
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Badges
+
+
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+
+
+## Authors
+
+- [@Liz Dieterich](https://github.com/dieterichelizabeth)
+- [@Jordan Stafford](https://github.com/jowstafford)
+- [@Mark Estrada](https://github.com/hmarkestrad)
+- [@Jarod Florence](https://www.github.com/JFlo1981)
+
+## 🚀 About Us
+I'm a full stack developer...
+
+
+## Tech Stack
+
+**Client:** React, Redux, TailwindCSS
+
+**Server:** Node, Express
+
+
+## Demo
+
+Insert gif or link to demo
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm start
+```
+
+
+## Lessons Learned
+
+What did you learn while building this project? What challenges did you face and how did you overcome them?
+
+
+## Support
+
+For support, email fake@fake.com or join our Slack channel.
+
