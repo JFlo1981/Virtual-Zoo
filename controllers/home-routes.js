@@ -8,6 +8,10 @@ router.get("/sign-up", (req, res) => {
   res.render("sign-up");
 });
 
+router.get("/single-video", (req, res) => {
+  res.render("single-video");
+});
+
 router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
