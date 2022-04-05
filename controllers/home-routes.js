@@ -1,7 +1,6 @@
-
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Video, User, Comment, Fav } = require("../models");
+const { Video, User, Comment, Fav, Category } = require("../models");
 
 // Log in route
 router.get("/", (req, res) => {
@@ -24,7 +23,18 @@ router.get("/single-video", (req, res) => {
 
 // get all videos for homepage
 router.get("/homepage", (req, res) => {
-  res.render("homepage");
+  console.log("======================");
+  Category.findAll({
+    attributes: ["id", "title"],
+  }).then((dbcategoryData) => {
+    // serialize the data
+    const categories = dbcategoryData.map((category) =>
+      category.get({ plain: true })
+    );
+    console.log(categories);
+    // pass data to template
+    res.render("homepage", { categories });
+  });
 });
 
 // get all videos for favorites dashboard

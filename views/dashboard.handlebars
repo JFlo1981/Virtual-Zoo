@@ -24,7 +24,7 @@
 </nav>
 
 <!-- SEARCH FOR THE USER AND JOIN VIDEO TABLE THROUGH FAVORITES TABLE -->
-
+{{#each this}}
 <section class="favoritespage" style="background-color: #111112">
   <div style=" 
   width: 100%;
@@ -52,7 +52,7 @@
     <div class="row d-flex justify-content-between">
 
       <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
-      {{#each this}}
+      {{!-- {{#each this}}
       <div id="category-video-card" class="col-lg-4 p-3">
         <a href="/video/{{video.id}}">
         <img
@@ -62,11 +62,12 @@
         />
         </a>
       </div>
-      {{/each}}
+      {{/each}} --}}
       
     </div>
   </div>
 </section>
+{{/each}}
 
 <footer style="position:fixed; bottom: 0; width: 100%;">
   <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander

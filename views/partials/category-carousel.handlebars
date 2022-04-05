@@ -1,7 +1,7 @@
 <!-- FOR EACH CATEGORY, CREATE A CAROUSEL -->
-{{#each this}}
-<div class="AfricaCams" style="margin: 40px 20px">
-  <h2 class="categoryTitle">{{category.name}}</h2>
+{{#each categories as |category|}}
+<div style="margin: 40px 20px">
+  <a href="/category:{{id}}" class="categoryTitle">{{title}}</a>
   <hr style="border-top: 1px solid #666666ff" />
   <div class="categorySlides swiper">
     <div class="swiper-wrapper">
