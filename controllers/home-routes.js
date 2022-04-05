@@ -1,4 +1,5 @@
 
+
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav } = require("../models");
@@ -96,3 +97,4 @@ router.get("/inProgress", (req, res) => {
 });
 
 module.exports = router;
+
