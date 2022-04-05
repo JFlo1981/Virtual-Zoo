@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Video, Comment, Fav } = require('../../models');
+const { User, Video, Comment, Fav, Category } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -54,10 +54,14 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(req.body,"Signup route")
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName
+
   })
     .then(dbUserData => {
       req.session.save(() => {
