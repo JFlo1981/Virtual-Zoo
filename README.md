@@ -80,7 +80,7 @@ Insert gif or link to demo....
 
 ## Deployment
 
-To deploy this project run:
+To deploy this project run->
 
 ```bash
   npm start
