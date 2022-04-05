@@ -13,7 +13,7 @@ right into the comfort of your home... Or anywhere you take your devices!
 
 
 
-## User Story
+## USER STORY:
 
 * When I go to our zoo website,
 * Then I am prompted to either log in or create an account.
