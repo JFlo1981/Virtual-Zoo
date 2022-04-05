@@ -1,3 +1,5 @@
+
+
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav } = require("../models");
@@ -15,6 +17,15 @@ router.get("/", (req, res) => {
 // Sign up route
 router.get("/sign-up", (req, res) => {
   res.render("sign-up");
+});
+
+router.get("/single-video", (req, res) => {
+  res.render("single-video");
+});
+
+// get all videos for homepage
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
 });
 
 // get all videos for favorites dashboard
@@ -86,3 +97,4 @@ router.get("/inProgress", (req, res) => {
 });
 
 module.exports = router;
+
