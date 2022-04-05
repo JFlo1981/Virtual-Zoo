@@ -77,31 +77,21 @@ router.get("/video/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [
-      "id",
-      "video_url",
-      "title",
-      "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)"
-        ) /*'vote_count'*/,
-      ],
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ["id", "comment_text", "video_id", "user_id", "created_at"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
+    attributes: ["id", "description", "path"],
+    // include: [
+    //   {
+    //     model: Comment,
+    //     attributes: ["id", "comment_text", "video_id", "user_id"],
+    //     include: {
+    //       model: User,
+    //       attributes: ["username"],
+    //     },
+    //   },
+    //   {
+    //     model: User,
+    //     attributes: ["username"],
+    //   },
+    // ],
   })
     .then((dbVideoData) => {
       if (!dbVideoData) {
@@ -113,10 +103,7 @@ router.get("/video/:id", (req, res) => {
       const video = dbVideoData.get({ plain: true });
 
       // pass data to template
-      res.render("single-video", {
-        video,
-        loggedIn: req.session.loggedIn,
-      });
+      res.render("single-video", { video });
     })
     .catch((err) => {
       console.log(err);

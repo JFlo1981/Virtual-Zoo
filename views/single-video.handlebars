@@ -19,8 +19,15 @@
 
         <section class="px-3">
             <div class="figure float-left">
-                <img src="/images/Polar-bear.jpg" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption">Look at this cute polar bear!</figcaption>
+                <iframe
+                class="figure-img img-fluid rounded"
+                src="{{video.path}}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                ></iframe>
+                <figcaption class="figure-caption">{{video.description}}</figcaption>
             </div>
             <div class="float-right comments">
                 <input class="form-control" placeholder="comments">
