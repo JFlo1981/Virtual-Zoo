@@ -15,10 +15,9 @@
 }
 
 .figure {
-    /* width: 515px;
-    height: 356px; */
     border: 1px solid #f00;
     width: 60%;
+    height: 500px;
 }
 
 .comments {
