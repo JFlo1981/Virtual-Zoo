@@ -75,7 +75,7 @@ I'm a full stack developer...
 
 ## Demo
 
-Insert gif or link to demo
+Insert gif or link to demo....
 
 
 ## Deployment
