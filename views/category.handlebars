@@ -50,17 +50,17 @@
     <div class="row d-flex justify-content-between">
 
       <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
-      {{!-- {{#each this}}
+      {{#each category.videos}}
       <div id="category-video-card" class="col-lg-4 p-3">
-        <a href="/video/{{video.id}}">
+        <a href="/video/{{id}}">
         <img
-          src="{{video.thumbnail}}"
+          src="{{thumbnail}}"
           class="col-12 p-3"
           style="border-radius: 25px"
         />
         </a>
       </div>
-      {{/each}} --}}
+      {{/each}}
 
     </div>
   </div>

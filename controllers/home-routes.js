@@ -51,6 +51,12 @@ router.get("/category/:id", (req, res) => {
       id: req.params.id,
     },
     attributes: ["id", "title"],
+    include: [
+      {
+        model: Video,
+        attributes: ["id", "description", "path", "thumbnail", "category_id"],
+      },
+    ],
   }).then((dbcategoryData) => {
     // serialize the data
     const category = dbcategoryData.get({ plain: true });
