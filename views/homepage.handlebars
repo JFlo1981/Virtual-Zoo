@@ -11,16 +11,13 @@
         <a href="/dashboard" class="text-light">Favorites</a>
       </li>
       <li>
-        <a href="/donate" class="text-light">Donate</a>
+        <a href="/inProgress" class="text-light">Donate</a>
       </li>
       <li>
-        <a href="/shop" class="text-light">Shop</a>
+        <a href="/inProgress" class="text-light">Shop</a>
       </li>
       <li>
-        
-        <button id="logout" class="btn-no-style">logout</button>
-        <a href="/login">login</a>
-        {{!-- <a href="/" class="text-light">Log Out</a> --}}
+        <button id="logout" style="background-color: transparent; border-style: none; color: white" class="btn-no-style">Logout</button>
       </li>
     </ul>
   </div>
@@ -44,10 +41,7 @@
     </div>
   </div>
 
-  {{> live-cams }}
-  {{> aquatic-cams }}
-  {{> africa-cams }}
-  {{> arctic-cams }}
+  {{> category-carousel }}
 
 </section>
 

@@ -11,20 +11,27 @@
         <a href="/dashboard" class="text-light">Favorites</a>
       </li>
       <li>
-        <a href="/donate" class="text-light">Donate</a>
+        <a href="/inProgress" class="text-light">Donate</a>
       </li>
       <li>
-        <a href="/shop" class="text-light">Shop</a>
+        <a href="/inProgress" class="text-light">Shop</a>
       </li>
       <li>
-        <a href="/" class="text-light">Log Out</a>
+        <button id="logout" style="background-color: transparent; border-style: none; color: white" class="btn-no-style">Logout</button>
       </li>
     </ul>
   </div>
 </nav>
 
+<!-- SEARCH FOR THE CATEGORY AND JOIN VIDEO TABLE THROUGH FOREIGN KEY? -->
+
 <section style="background-color: #111112">
-  <div class="{{category.name}}_Header">
+  <div style="
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-image: {{category.imagePath}};
+  ">
     <div class="container">
       <div
         class="row d-flex justify-content-center"
@@ -42,6 +49,7 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
 
+      <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
       {{#each this}}
       <div id="category-video-card" class="col-lg-4 p-3">
         <a href="/video/{{video.id}}">
