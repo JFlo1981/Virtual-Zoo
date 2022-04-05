@@ -17,10 +17,6 @@ router.get("/sign-up", (req, res) => {
   res.render("sign-up");
 });
 
-router.get("/single-video", (req, res) => {
-  res.render("single-video");
-});
-
 // get all videos for homepage
 router.get("/homepage", (req, res) => {
   console.log("======================");
@@ -78,20 +74,20 @@ router.get("/video/:id", (req, res) => {
       id: req.params.id,
     },
     attributes: ["id", "description", "path"],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ["id", "comment_text", "video_id", "user_id"],
-    //     include: {
-    //       model: User,
-    //       attributes: ["username"],
-    //     },
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ["username"],
-    //   },
-    // ],
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "video_id", "user_id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
   })
     .then((dbVideoData) => {
       if (!dbVideoData) {

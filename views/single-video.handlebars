@@ -19,6 +19,7 @@
             </div>
         </header>
 
+        <!-- VIDEO DISPLAY -->
         <section class="px-3">
             <div class="figure float-left">
                 <iframe
@@ -42,14 +43,20 @@
                     <figcaption class="figure-caption">{{video.description}}</figcaption>
                 </div>
             </div>
+            
+            <!-- COMMENT DISPLAY -->
             <div class="float-right comments">
                 <p class="float-left">Leave a Comment:</p>
+                <form action="comment-form">
                 <input class="form-control" placeholder="Say 'hi' to the animals!"> 
                 <button class="btn btn-outline-secondary col-12 mt-3">post</button>
+                </form>
             </div>
+
              <div class="float-right comments" style="margin-top: 30px;">
                 <p style="font-size: 15px;">All Comments</p>
                 <hr style="border-top: 1px solid #2f3030;">
+
                 {{#each category.videos}}
                 <div>
                     <p style="font-size: 20px">"{{comment.comment_text}}"</p>
@@ -57,6 +64,7 @@
                     <span style="color: #b5b5b5">Created at: {{comment.created_at}}</span></p>
                 </div>
                 {{/each}}
+
             </div>
         </section>
     </div>
@@ -67,3 +75,5 @@
   Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna Learn About
   Cool Animals And Other Stuff Too
 </footer>
+
+<script src="/javascript/comment.js"></script>
