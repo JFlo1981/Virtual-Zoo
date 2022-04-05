@@ -22,7 +22,7 @@ const categorydata = [
   },
   {
     title: "Creepy Favorites",
-  }
+  },
 ];
 
 const seedCategories = () =>

@@ -7,6 +7,12 @@ router.get("/", (req, res) => {
   console.log("======================");
   Category.findAll({
     attributes: ["id", "post_url", "title", "created_at"],
+    include: [
+      {
+        model: Video,
+        attributes: ["id", "description", "path", "thumbnail", "category_id"],
+      },
+    ],
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {

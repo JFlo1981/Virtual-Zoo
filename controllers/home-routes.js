@@ -26,6 +26,12 @@ router.get("/homepage", (req, res) => {
   console.log("======================");
   Category.findAll({
     attributes: ["id", "title"],
+    include: [
+      {
+        model: Video,
+        attributes: ["id", "description", "path", "thumbnail", "category_id"],
+      },
+    ],
   }).then((dbcategoryData) => {
     // serialize the data
     const categories = dbcategoryData.map((category) =>
