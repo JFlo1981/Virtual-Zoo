@@ -43,14 +43,26 @@ router.get("/homepage", (req, res) => {
   });
 });
 
+// get all videos for a category by id
+router.get("/category/:id", (req, res) => {
+  console.log("======================");
+  Category.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "title"],
+  }).then((dbcategoryData) => {
+    // serialize the data
+    const category = dbcategoryData.get({ plain: true });
+    console.log(category);
+    // pass data to template
+    res.render("category", { category });
+  });
+});
+
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");
-});
-
-// get all videos for a category by id
-router.get("/category/:id", (req, res) => {
-  res.render("category");
 });
 
 // get one video by id

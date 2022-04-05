@@ -37,7 +37,7 @@
         class="row d-flex justify-content-center"
         style="padding-top: 50px"
       >
-        <h1 class="col-12 category_Title" style="color: white">{{title}} Cameras</h1>
+        <h1 class="col-12 category_Title" style="color: white"> {{category.title}} Cameras</h1>
         <p class="category_page_description col-8">
           {{!-- {{category.description}} --}}
         </p>
@@ -50,7 +50,7 @@
     <div class="row d-flex justify-content-between">
 
       <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
-      {{#each this}}
+      {{!-- {{#each this}}
       <div id="category-video-card" class="col-lg-4 p-3">
         <a href="/video/{{video.id}}">
         <img
@@ -60,7 +60,7 @@
         />
         </a>
       </div>
-      {{/each}}
+      {{/each}} --}}
 
     </div>
   </div>
