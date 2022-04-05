@@ -57,9 +57,10 @@ right into the comfort of your home... Or anywhere you take your devices!
 ## Authors
 
 - [@Liz Dieterich](https://github.com/dieterichelizabeth)
-- [@Jordan Stafford](https://github.com/jowstafford)
 - [@Mark Estrada](https://github.com/hmarkestrad)
 - [@Jarod Florence](https://www.github.com/JFlo1981)
+- [@Jordan Stafford](https://github.com/jowstafford)
+
 
 ## 🚀 About Us
 I'm a full stack developer...
@@ -67,9 +68,9 @@ I'm a full stack developer...
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** Javascript, BootstrapCSS
 
-**Server:** Node, Express
+**Server:** Node, Express, Sequelize
 
 
 ## Demo
