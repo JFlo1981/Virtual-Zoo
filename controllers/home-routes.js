@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav } = require("../models");
@@ -17,49 +18,14 @@ router.get("/sign-up", (req, res) => {
   res.render("sign-up");
 });
 
+router.get("/single-video", (req, res) => {
+  res.render("single-video");
+});
+
 // get all videos for homepage
-
-  // console.log("======================");
-  // Video.findAll({
-  //   attributes: [
-  //     "id",
-  //     "video_url",
-  //     "title",
-  //     "created_at",
-  //     [
-  //       sequelize.literal(
-  //         "(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)"
-  //       ) /*'vote_count'*/,
-  //     ],
-  //   ],
-  //   include: [
-  //     {
-  //       model: Comment,
-  //       attributes: ["id", "comment_text", "video_id", "user_id", "created_at"],
-  //       include: {
-  //         model: User,
-  //         attributes: ["username"],
-  //       },
-  //     },
-  //     {
-  //       model: User,
-  //       attributes: ["username"],
-  //     },
-  //   ],
-  // })
-  //   .then((dbVideoData) => {
-  //     const videos = dbVideoData.map((video) => video.get({ plain: true }));
-
-  //     res.render("homepage", {
-  //       videos,
-  //       loggedIn: req.session.loggedIn,
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  //   });
-
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
+});
 
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
