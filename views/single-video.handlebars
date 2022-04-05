@@ -1,17 +1,19 @@
 <div class="text-center text-white b0dy">
-    <div class="cover-container p-3 mx-auto flex-column">
+    <div class="container p-3 mx-auto flex-column">
         <header class="mb-4">
             <div class="navbar rounded">
                 <h3 class="mb-0 float-left">Zoolander</h3>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="nav-link" href="/homepage">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Favorites</a>
+                        <a class="nav-link" href="/dashboard">Favorites</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">LogOut</a>
+                        <button id="logout" 
+                        style="background-color: transparent; border-style: none"
+                        class="btn-no-style nav-link text-primary">Logout</button>
                     </li>
                 </ul>
             </div>
@@ -21,17 +23,47 @@
             <div class="figure float-left">
                 <iframe
                 class="figure-img img-fluid rounded"
+                height="100%"
+                width="100%"
                 src="{{video.path}}"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 ></iframe>
-                <figcaption class="figure-caption">{{video.description}}</figcaption>
+                <div class="col-12 d-flex justify-content-start">
+                    <button id="favorite_Button"
+                    style="margin-right: 40px; 
+                        color: white; 
+                        background-color: transparent; 
+                        border-style: none;">
+                        <i class="fa-solid fa-heart fa-xl"></i>
+                    </button>
+                    <figcaption class="figure-caption">{{video.description}}</figcaption>
+                </div>
             </div>
             <div class="float-right comments">
-                <input class="form-control" placeholder="comments">
+                <p class="float-left">Leave a Comment:</p>
+                <input class="form-control" placeholder="Say 'hi' to the animals!"> 
+                <button class="btn btn-outline-secondary col-12 mt-3">post</button>
+            </div>
+             <div class="float-right comments" style="margin-top: 30px;">
+                <p style="font-size: 15px;">All Comments</p>
+                <hr style="border-top: 1px solid #2f3030;">
+                {{#each category.videos}}
+                <div>
+                    <p style="font-size: 20px">"{{comment.comment_text}}"</p>
+                    <p style="font-size: 13px; margin-top: 0px"> {{user.username}} <br> 
+                    <span style="color: #b5b5b5">Created at: {{comment.created_at}}</span></p>
+                </div>
+                {{/each}}
             </div>
         </section>
     </div>
 </div>
+
+<footer>
+  <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander
+  Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna Learn About
+  Cool Animals And Other Stuff Too
+</footer>

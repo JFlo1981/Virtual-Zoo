@@ -12,12 +12,13 @@
     background-color: #1f1e1f;
     display: flex;
     min-height: 100vh;
-    
 }
 
 .figure {
-    max-width: 60%;
-    max-height: 60%;
+    /* width: 515px;
+    height: 356px; */
+    border: 1px solid #f00;
+    width: 60%;
 }
 
 .comments {
