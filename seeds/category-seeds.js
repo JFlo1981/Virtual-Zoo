@@ -4,6 +4,9 @@ const { Category } = require("../models");
 const categorydata = [
   {
     title: "Cats & Claws",
+    description:
+      "Big cats, Little cats, and all the cool cats in between. Watch these majestic creature in their natural habitat.",
+    imagePath: "../images/page_Cats.png",
   },
   {
     title: "Canine Friends",

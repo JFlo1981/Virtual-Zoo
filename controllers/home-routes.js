@@ -50,7 +50,7 @@ router.get("/category/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title"],
+    attributes: ["id", "title", "description", "imagePath"],
     include: [
       {
         model: Video,
