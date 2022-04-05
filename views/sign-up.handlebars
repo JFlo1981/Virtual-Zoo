@@ -9,34 +9,39 @@
 
             <div class="row g-5 justify-content-center">
                 <div class="col-md-7 col-lg-8">
-                    <form class="needs-validation signup-form" novalidate>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <label>First name</label>
-                                <input class="form-control" placeholder="First" required>
-                            </div>
+                    <form class="signup-form needs-validation" novalidate>
+                        {{!-- <div class="row g-3"> --}}
 
-                            <div class="col-sm-6">
-                                <label>Last name</label>
-                                <input class="form-control" placeholder="Last" required>
-                            </div>
-                            <div class="col-12">
-                                <label>Username</label>
-                                <input class="form-control" placeholder="Username" required>
-                            </div>
-                            <div class="col-12">
-                                <label>Email </label>
-                                <input type="email" class="form-control" placeholder="Name@example.com" required>
-                            </div>
+                        <div class="col-sm-6">
+                            <label>First name</label>
+                            <input class="form-control" 
+                            placeholder="First" 
+                            id="firstName" required>
+                        </div>
 
-                            <div class="col-12">
+                        <div class="col-sm-6">
+                            <label>Last name</label>
+                            <input class="form-control" 
+                                   placeholder="Last" 
+                                   id="lastName" required>
+                        </div>
 
-                                <label>Password</label>
-                                <input class="form-control" placeholder="Password" id="Password" required>
+                        <div class="col-12">
+                            <label>Username</label>
+                            <input class="form-control" placeholder="Username" id="username" required>
+                        </div>
 
-                            </div>
+                        <div class="col-12">
+                            <label>Email </label>
+                            <input type="email" class="form-control" placeholder="Name@example.com" id="email" required>
+                        </div>
 
-                            <button class="w-100 btn btn-primary btn-lg mt-5" type="submit">Sign Up and Continue</button>
+                        <div class="col-12">
+                            <label>Password</label>
+                            <input class="form-control" placeholder="Password" id="password" required>
+                        </div>
+
+                        <button class="w-100 btn btn-primary btn-lg mt-5" type="submit">Sign Up and Continue</button>
                     </form>
                 </div>
             </div>
