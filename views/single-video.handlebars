@@ -38,7 +38,7 @@
                         color: white; 
                         background-color: transparent; 
                         border-style: none;">
-                        <i class="fa-solid fa-heart fa-xl"></i>
+                        <i id="fav-btn" class="fa-solid fa-heart fa-xl"></i>
                     </button>
                     <figcaption class="figure-caption">{{video.description}}</figcaption>
                 </div>
@@ -48,8 +48,9 @@
             <div class="float-right comments">
                 <p class="float-left">Leave a Comment:</p>
                 <form action="comment-form">
-                <input class="form-control" placeholder="Say 'hi' to the animals!"> 
-                <button class="btn btn-outline-secondary col-12 mt-3">post</button>
+                    <textarea name="comment-body" class="form-control" placeholder="Say 'hi' to the animals!"></textarea>
+                    {{!-- <input >  --}}
+                    <button class="btn btn-outline-secondary col-12 mt-3">post</button>
                 </form>
             </div>
 
@@ -77,3 +78,4 @@
 </footer>
 
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/fav.js"></script>
