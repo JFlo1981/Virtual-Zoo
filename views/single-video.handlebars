@@ -11,9 +11,8 @@
                         <a class="nav-link" href="/dashboard">Favorites</a>
                     </li>
                     <li class="nav-item">
-                        <button id="logout" 
-                        style="background-color: transparent; border-style: none"
-                        class="btn-no-style nav-link text-primary">Logout</button>
+                        <button id="logout" style="background-color: transparent; border-style: none"
+                            class="btn-no-style nav-link text-primary">Logout</button>
                     </li>
                 </ul>
             </div>
@@ -22,19 +21,14 @@
         <!-- VIDEO DISPLAY -->
         <section class="px-3">
             <div class="figure float-left">
-                <iframe
-                class="figure-img img-fluid rounded"
-                height="100%"
-                width="100%"
-                src="{{video.path}}"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                ></iframe>
+                <div style="height: 500px;">
+                    <iframe class="figure-img img-fluid rounded" height="auto" width="100%" src="{{video.path}}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
                 <div class="col-12 d-flex justify-content-start">
-                    <button id="favorite_Button"
-                    style="margin-right: 40px; 
+                    <button id="favorite_Button" style="margin-right: 40px; 
                         color: white; 
                         background-color: transparent; 
                         border-style: none;">
@@ -43,26 +37,28 @@
                     <figcaption class="figure-caption">{{video.description}}</figcaption>
                 </div>
             </div>
-            
+
             <!-- COMMENT DISPLAY -->
             <div class="float-right comments">
                 <p class="float-left">Leave a Comment:</p>
                 <form action="comment-form">
-                    <textarea name="comment-body" class="form-control" placeholder="Say 'hi' to the animals!"></textarea>
-                    {{!-- <input >  --}}
+                    <textarea name="comment-body" class="form-control"
+                        placeholder="Say 'hi' to the animals!"></textarea>
+                    {{!-- <input> --}}
                     <button class="btn btn-outline-secondary col-12 mt-3">post</button>
                 </form>
             </div>
 
-             <div class="float-right comments" style="margin-top: 30px;">
+            <div class="float-right comments" style="margin-top: 30px;">
                 <p style="font-size: 15px;">All Comments</p>
                 <hr style="border-top: 1px solid #2f3030;">
 
                 {{#each category.videos}}
                 <div>
                     <p style="font-size: 20px">"{{comment.comment_text}}"</p>
-                    <p style="font-size: 13px; margin-top: 0px"> {{user.username}} <br> 
-                    <span style="color: #b5b5b5">Created at: {{comment.created_at}}</span></p>
+                    <p style="font-size: 13px; margin-top: 0px"> {{user.username}} <br>
+                        <span style="color: #b5b5b5">Created at: {{comment.created_at}}</span>
+                    </p>
                 </div>
                 {{/each}}
 
@@ -72,9 +68,9 @@
 </div>
 
 <footer>
-  <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander
-  Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna Learn About
-  Cool Animals And Other Stuff Too
+    <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander
+    Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna Learn About
+    Cool Animals And Other Stuff Too
 </footer>
 
 <script src="/javascript/logout.js"></script>
