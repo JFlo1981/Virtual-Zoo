@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav, Category } = require("../models");
@@ -33,6 +34,12 @@ router.get("/homepage", (req, res) => {
     const categories = dbcategoryData.map((category) =>
       category.get({ plain: true })
     );
+
+    for (let i = 0; i < categories.length; ++i) {
+      console.log(categories[i].title);
+      console.log(categories[i].videos);
+    }
+
     console.log(categories);
     // pass data to template
     res.render("homepage", { categories });
