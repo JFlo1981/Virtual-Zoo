@@ -1,8 +1,7 @@
 
-
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Video, User, Comment, Fav } = require("../models");
+const { Video, User, Comment, Fav, Category } = require("../models");
 
 // Log in route
 router.get("/", (req, res) => {
@@ -19,23 +18,60 @@ router.get("/sign-up", (req, res) => {
   res.render("sign-up");
 });
 
-router.get("/single-video", (req, res) => {
-  res.render("single-video");
-});
-
 // get all videos for homepage
 router.get("/homepage", (req, res) => {
-  res.render("homepage");
+  console.log("======================");
+  Category.findAll({
+    attributes: ["id", "title"],
+    include: [
+      {
+        model: Video,
+        attributes: ["id", "description", "path", "thumbnail", "category_id"],
+      },
+    ],
+  }).then((dbcategoryData) => {
+    // serialize the data
+    const categories = dbcategoryData.map((category) =>
+      category.get({ plain: true })
+    );
+
+    for (let i = 0; i < categories.length; ++i) {
+      console.log(categories[i].title);
+      console.log(categories[i].videos);
+    }
+
+    console.log(categories);
+    // pass data to template
+    res.render("homepage", { categories });
+  });
+});
+
+// get all videos for a category by id
+router.get("/category/:id", (req, res) => {
+  console.log("======================");
+  Category.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "title", "description", "imagePath"],
+    include: [
+      {
+        model: Video,
+        attributes: ["id", "description", "path", "thumbnail", "category_id"],
+      },
+    ],
+  }).then((dbcategoryData) => {
+    // serialize the data
+    const category = dbcategoryData.get({ plain: true });
+    console.log(category);
+    // pass data to template
+    res.render("category", { category });
+  });
 });
 
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
   res.render("dashboard");
-});
-
-// get all videos for a category by id
-router.get("/category/:id", (req, res) => {
-  res.render("category");
 });
 
 // get one video by id
@@ -44,21 +80,11 @@ router.get("/video/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [
-      "id",
-      "video_url",
-      "title",
-      "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM fav WHERE video.id = fav.video_id)"
-        ) /*'vote_count'*/,
-      ],
-    ],
+    attributes: ["id", "description", "path"],
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "video_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "video_id", "user_id"],
         include: {
           model: User,
           attributes: ["username"],
@@ -80,10 +106,7 @@ router.get("/video/:id", (req, res) => {
       const video = dbVideoData.get({ plain: true });
 
       // pass data to template
-      res.render("single-video", {
-        video,
-        loggedIn: req.session.loggedIn,
-      });
+      res.render("single-video", { video });
     })
     .catch((err) => {
       console.log(err);
@@ -97,4 +120,3 @@ router.get("/inProgress", (req, res) => {
 });
 
 module.exports = router;
-
