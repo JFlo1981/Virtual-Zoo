@@ -4,6 +4,7 @@
 
 .b0dy {
     background-color: #1f1e1f;
+    display: flex;
     min-height: 100vh;
 }
 
