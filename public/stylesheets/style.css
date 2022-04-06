@@ -55,6 +55,10 @@ nav li {
   padding: 10px;
 }
 
+#logout:hover {
+  text-decoration: underline;
+}
+
 /* STYLES TO CAROUSELS */
 
 .categoryTitle {

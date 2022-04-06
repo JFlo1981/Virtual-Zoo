@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-Title">
-    <p class="text-light ">Zoolander</p>
+    <h3 class="text-light ">Zoolander</h3>
   </div>
   <div class="float-right" style="padding-right: 40px;">
     <ul>
@@ -11,7 +11,7 @@
         <a href="/dashboard" class="text-light">Favorites</a>
       </li>
       <li>
-        <a href="/inProgress" class="text-light">Donate</a>
+        <a href="/inProgress" class="text-light">Support</a>
       </li>
       <li>
         <a href="/inProgress" class="text-light">Shop</a>
@@ -30,14 +30,14 @@
   width: 100%;
   height: 300px;
   background-size: cover;
-  background-image: {{category.imagePath}};
+  background-image: url({{category.imagePath}});
   ">
     <div class="container">
       <div
         class="row d-flex justify-content-center"
         style="padding-top: 50px"
       >
-        <h1 class="col-12 category_Title" style="color: white">{{category.name}} Cameras</h1>
+        <h1 class="col-12 category_Title" style="color: white"> {{category.title}}</h1>
         <p class="category_page_description col-8">
           {{category.description}}
         </p>
@@ -50,11 +50,11 @@
     <div class="row d-flex justify-content-between">
 
       <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
-      {{#each this}}
+      {{#each category.videos}}
       <div id="category-video-card" class="col-lg-4 p-3">
-        <a href="/video/{{video.id}}">
+        <a href="/video/{{id}}">
         <img
-          src="{{video.thumbnail}}"
+          src="{{thumbnail}}"
           class="col-12 p-3"
           style="border-radius: 25px"
         />
@@ -65,6 +65,8 @@
     </div>
   </div>
 </section>
+
+<script src="/javascript/logout.js"></script>
 
 <footer>
   <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander
