@@ -10,13 +10,12 @@ router.get('/', (req, res) => {
     });
 });
 
+// post a comment
 router.post('/', (req, res) => {
-  // check the session
   if (req.session) {
     Comment.create({
       comment_text: req.body.comment_text,
       video_id: req.body.video_id,
-      // use the id from the session
       user_id: req.session.user_id
     })
       .then(dbCommentData => res.json(dbCommentData))
@@ -27,6 +26,7 @@ router.post('/', (req, res) => {
   }
 });
 
+// delete a comment
 router.delete('/:id', (req, res) => {
   Comment.destroy({
     where: {

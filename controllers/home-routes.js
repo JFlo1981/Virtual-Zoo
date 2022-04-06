@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav, Category } = require("../models");
