@@ -298,21 +298,9 @@ const mediadata = [
     category_id: 4,
   },
   {
-    description: "KC Zoo Penguin Cam 4K",
-    path: "https://www.youtube.com/embed/JJqXeRFsLjE",
-    thumbnail: "../images/hq720-32.jpg",
-    category_id: 4,
-  },
-  {
     description: "Kentucky Equine Adoption Center",
     path: "https://www.youtube.com/embed/AohUh4Wx2ps",
     thumbnail: "../images/hq720-40.jpg",
-    category_id: 5,
-  },
-  {
-    description: "KC Zoo Penguin Cam 4K",
-    path: "https://www.youtube.com/embed/JJqXeRFsLjE",
-    thumbnail: "../images/hq720-41.jpg",
     category_id: 5,
   },
   {
