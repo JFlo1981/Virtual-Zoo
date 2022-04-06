@@ -1,9 +1,3 @@
-.cover-continer {
-    display: flex;
-    width: 100;
-    height: 100;
-}
-
 .navbar {
     background-color: black;
 }
@@ -11,4 +5,12 @@
 .b0dy {
     background-color: #1f1e1f;
     min-height: 100vh;
+}
+
+.card {
+    width: 25vw;
+}
+
+.card-img-top {
+    height: 30vh;
 }
