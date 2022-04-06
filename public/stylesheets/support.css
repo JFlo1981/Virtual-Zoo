@@ -1,0 +1,23 @@
+.navbar {
+    background-color: black;
+}
+
+.b0dy {
+    background-color: #1f1e1f;
+    display: flex;
+    min-height: 100vh;
+}
+
+.support-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 25vw;
+    margin: 1.5%;
+}
+
+.card-img-top {
+    height: 35vh;
+}

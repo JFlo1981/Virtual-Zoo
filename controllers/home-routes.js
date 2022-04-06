@@ -114,9 +114,9 @@ router.get("/video/:id", (req, res) => {
     });
 });
 
-// for pages to come...
-router.get("/inProgress", (req, res) => {
-  res.render("inProgress");
+// support!
+router.get("/support", (req, res) => {
+  res.render("support");
 });
 
 module.exports = router;
