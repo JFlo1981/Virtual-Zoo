@@ -10,15 +10,5 @@
 
 .b0dy {
     background-color: #1f1e1f;
-    display: flex;
     min-height: 100vh;
-}
-
-.figure {
-    width: 60%;
-    height: 500px;
-}
-
-.comments {
-    width: 35%;
 }

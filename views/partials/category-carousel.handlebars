@@ -1,25 +1,24 @@
 <!-- FOR EACH CATEGORY, CREATE A CAROUSEL -->
-{{#each this}}
-<div class="AfricaCams" style="margin: 40px 20px">
-  <h2 class="categoryTitle">{{category.name}}</h2>
+{{#each categories as |category|}}
+<div style="margin: 40px 20px">
+  <a href="/category/{{id}}" class="categoryTitle">{{title}}</a>
   <hr style="border-top: 1px solid #666666ff" />
   <div class="categorySlides swiper">
     <div class="swiper-wrapper">
       <!-- FOR EACH CATEGORY, CREATE A SLIDE PER VIDEO IN THE DATABASE -->
       <!-- SLIDES CONTAIN THE VIDEO NAME, ID, THUMBNAIL IMAGE PATH, AND SOURCE, AND TITLE -->
       <!-- Slides -->
-      {{#each this.video}}
+      {{#each category.videos}}
       <div class="swiper-slide">
-        <a href="/video/{{video.id}}">
+        <a href="/video/{{id}}">
           <img
             class="videoThumbnail"
-            src="{{video.thumbnail}}"
-            alt="{{video.altText}}"
+            src="{{thumbnail}}"
+            alt="{{altText}}"
           />
         </a>
         <p class="videoInfo">
-          {{video.Title}} <br />
-          <span style="color: gray">{{video.Source}}</span>
+          <span style="color: gray">{{description}}</span>
         </p>
       </div>
       {{/each}}
