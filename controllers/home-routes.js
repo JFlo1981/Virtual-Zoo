@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
     res.redirect("/homepage");
     return;
   }
-
   res.render("login");
 });
 
@@ -19,7 +18,6 @@ router.get("/sign-up", (req, res) => {
 
 // get all videos for homepage
 router.get("/homepage", (req, res) => {
-  console.log("======================");
   Category.findAll({
     attributes: ["id", "title"],
     include: [
@@ -33,13 +31,8 @@ router.get("/homepage", (req, res) => {
     const categories = dbcategoryData.map((category) =>
       category.get({ plain: true })
     );
+    // console.log(categories);
 
-    for (let i = 0; i < categories.length; ++i) {
-      console.log(categories[i].title);
-      console.log(categories[i].videos);
-    }
-
-    console.log(categories);
     // pass data to template
     res.render("homepage", { categories });
   });
@@ -62,7 +55,8 @@ router.get("/category/:id", (req, res) => {
   }).then((dbcategoryData) => {
     // serialize the data
     const category = dbcategoryData.get({ plain: true });
-    console.log(category);
+    // console.log(category);
+
     // pass data to template
     res.render("category", { category });
   });
@@ -71,7 +65,6 @@ router.get("/category/:id", (req, res) => {
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
   const userId = req.session.user_id;
-  console.log("THIS IS WITHOUT COOKIE IN THE ROUTE " + userId);
 
   User.findOne({
     where: {
@@ -91,13 +84,8 @@ router.get("/dashboard", (req, res) => {
   }).then((dbuserData) => {
     // serialize the data
     const user = dbuserData.get({ plain: true });
+    // console.log(user);
 
-    for (let i = 0; i < user.length; ++i) {
-      console.log(user[i].favs);
-    }
-
-    console.log(user);
-    console.log(user.favs.video);
     // pass data to template
     res.render("dashboard", { user });
   });
@@ -133,7 +121,7 @@ router.get("/video/:id", (req, res) => {
 
       // serialize the data
       const video = dbVideoData.get({ plain: true });
-      console.log(video);
+      // console.log(video);
 
       // pass data to template
       res.render("single-video", { video });

@@ -1,7 +1,5 @@
-console.log("listening for favs");
 async function favClickHandler(event) {
   event.preventDefault();
-  console.log("----------------------------Faving vid");
 
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
