@@ -52,7 +52,11 @@
       <!-- If the user has favorited videos, then for each video... -->
 
       {{#each user.favs}}
-        <div id="category-video-card" class="col-lg-4 p-3">
+        <div
+          id="category-video-card"
+          class="col-lg-4 p-3"
+          style="min-height: 300px;"
+        >
           <a href="/video/{{video_id}}">
             <img
               src="{{video.thumbnail}}"
