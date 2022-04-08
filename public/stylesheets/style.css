@@ -156,3 +156,17 @@ footer {
     padding-top: 5px;
   }
 }
+
+/* MEDIA QUERY FOR 768px */
+@media screen and (max-width: 886px) {
+  #home-hero {
+    background-image: url(../images/homepage_md.png);
+  }
+}
+
+/* MEDIA QUERY FOR 575px */
+@media screen and (max-width: 575px) {
+  #home-hero {
+    background-image: url(../images/homepage_sm.png);
+  }
+}
