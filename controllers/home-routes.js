@@ -70,7 +70,37 @@ router.get("/category/:id", (req, res) => {
 
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  const userId = req.session.user_id;
+  console.log("THIS IS WITHOUT COOKIE IN THE ROUTE " + userId);
+
+  User.findOne({
+    where: {
+      id: userId,
+    },
+    attributes: ["username"],
+    include: [
+      {
+        model: Fav,
+        attributes: ["video_id"],
+        include: {
+          model: Video,
+          attributes: ["thumbnail", "video_id"],
+        },
+      },
+    ],
+  }).then((dbuserData) => {
+    // serialize the data
+    const user = dbuserData.get({ plain: true });
+
+    for (let i = 0; i < user.length; ++i) {
+      console.log(user[i].favs);
+    }
+
+    console.log(user);
+    console.log(user.favs.video);
+    // pass data to template
+    res.render("dashboard", { user });
+  });
 });
 
 // get one video by id

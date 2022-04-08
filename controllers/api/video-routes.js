@@ -52,9 +52,7 @@ router.get("/", (req, res) => {
     });
 });
 
-
 router.get("/:id", (req, res) => {
-
   Video.findOne({
     where: {
       id: req.params.id,
@@ -111,18 +109,13 @@ router.post("/", (req, res) => {
     });
 });
 
-
 router.put("/fav", (req, res) => {
   // make sure the session exists first
   if (req.session) {
     // pass session id along with all destructured properties on req.body
-    Video.fav(
-      { ...req.body, user_id: req.session.user_id },
-      { Fav, Comment, User }
-    )
+    Video.fav({ ...req.body, user_id: req.session.user_id }, { Fav, User })
       .then((updatedFavData) => res.json(updatedFavData))
       .catch((err) => {
-
         console.log(err);
         res.status(500).json(err);
       });

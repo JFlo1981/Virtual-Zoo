@@ -33,7 +33,7 @@
         style="padding-top: 50px"
       >
         <h1 class="col-12 category_Title" >
-          {{user.name}} Favorites Dashboard
+          {{user.username}} Favorites Dashboard
         </h1>
         <p class="category_page_description col-8">
           All of cutest, wildest, funniest, bravest, adorable animals you
@@ -47,13 +47,15 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
 
+      {{!-- {{#if !user.fav}}
       <div>
         <p style="color: grey; text-align: center;">Nothing to see here...Favorite some Videos to get started!</p>
       </div>
+      {{/if}} --}}
       <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
-      {{!-- {{#each this}}
+      {{#each user.favs}}
       <div id="category-video-card" class="col-lg-4 p-3">
-        <a href="/video/{{video.id}}">
+        <a href="/video/{{video_id}}">
         <img
           src="{{video.thumbnail}}"
           class="col-12 p-3"
@@ -61,7 +63,7 @@
         />
         </a>
       </div>
-      {{/each}} --}}
+      {{/each}}
       
     </div>
   </div>

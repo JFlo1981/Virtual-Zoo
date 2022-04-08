@@ -1,3 +1,4 @@
+console.log("listening for favs");
 async function favClickHandler(event) {
   event.preventDefault();
   console.log("----------------------------Faving vid");
