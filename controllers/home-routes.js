@@ -1,4 +1,3 @@
-
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav, Category } = require("../models");
@@ -84,7 +83,7 @@ router.get("/video/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "video_id", "user_id"],
+        attributes: ["id", "comment_text", "created_at", "video_id", "user_id"],
         include: {
           model: User,
           attributes: ["username"],
@@ -104,6 +103,7 @@ router.get("/video/:id", (req, res) => {
 
       // serialize the data
       const video = dbVideoData.get({ plain: true });
+      console.log(video);
 
       // pass data to template
       res.render("single-video", { video });

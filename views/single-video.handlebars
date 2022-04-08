@@ -45,7 +45,7 @@
             <!-- COMMENT DISPLAY -->
             <div class="float-right comments">
                 <p class="float-left">Leave a Comment:</p>
-                <form action="comment-form">
+                <form class="comment-form">
                     <textarea name="comment-body" class="form-control"
                         placeholder="Say 'hi' to the animals!"></textarea>
                     {{!-- <input> --}}
@@ -57,11 +57,11 @@
                 <p style="font-size: 15px;">All Comments</p>
                 <hr style="border-top: 1px solid #2f3030;">
 
-                {{#each category.videos}}
+                {{#each video.comments}}
                 <div>
-                    <p style="font-size: 20px">"{{comment.comment_text}}"</p>
-                    <p style="font-size: 13px; margin-top: 0px"> {{user.username}} <br>
-                        <span style="color: #b5b5b5">Created at: {{comment.created_at}}</span>
+                    <p style="font-size: 20px">"{{comment_text}}"</p>
+                    <p style="font-size: 13px; margin-top: 0px; text-align:left"> - {{user.username}} <br>
+                        <span style="color: #b5b5b5; font-size: 10px">Created at: {{created_at}}</span>
                     </p>
                 </div>
                 {{/each}}
