@@ -19,7 +19,7 @@ class Video extends Model {
           [
             sequelize.literal(
               "(SELECT COUNT(*) FROM vote WHERE video.id = fav.video_id)"
-            ),
+            )
             /*'vote_count'*/
           ],
         ],
