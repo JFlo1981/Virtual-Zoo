@@ -2,13 +2,6 @@
   box-sizing: border-box;
 }
 
-/* .landingPage {
-  height: 100vh;
-  background-image: url(../images/landingpage.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
 /* STYLES TO HOMEPAGE */
 .favoritespage,
 .home-page {
@@ -144,10 +137,6 @@ footer {
   transform: scale(1.1);
 }
 
-/* #video-Info:hover {
-  visibility: visible;
-} */
-
 .category_sub_title {
   margin-top: 10px;
   padding-left: 20px;
@@ -159,4 +148,25 @@ footer {
   font-size: 20px;
   color: #c9c9c9;
   text-shadow: 1px 1px 3px #595858eb;
+}
+
+/* MEDIA QUERY FOR 980px */
+@media screen and (max-width: 980px) {
+  .category_Title {
+    padding-top: 5px;
+  }
+}
+
+/* MEDIA QUERY FOR 768px */
+@media screen and (max-width: 886px) {
+  #home-hero {
+    background-image: url(../images/homepage_md.png);
+  }
+}
+
+/* MEDIA QUERY FOR 575px */
+@media screen and (max-width: 575px) {
+  #home-hero {
+    background-image: url(../images/homepage_sm.png);
+  }
 }

@@ -1,8 +1,5 @@
-console.log("listening for comment");
 async function commentFormHandler(event) {
   event.preventDefault();
-
-  console.log("Posting Comment");
 
   const comment_text = document
     .querySelector('textarea[name="comment-body"]')

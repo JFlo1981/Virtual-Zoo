@@ -1,7 +1,6 @@
 const sequelize = require("../config/connection");
 const { Video, Category } = require("../models");
 
-// MEDIA DATA GOES HERE
 const mediadata = [
   {
     description: "Kitten Rescue Cat Cam",

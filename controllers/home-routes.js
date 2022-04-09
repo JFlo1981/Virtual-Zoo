@@ -1,4 +1,3 @@
-
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Video, User, Comment, Fav, Category } = require("../models");
@@ -9,7 +8,6 @@ router.get("/", (req, res) => {
     res.redirect("/homepage");
     return;
   }
-
   res.render("login");
 });
 
@@ -20,7 +18,6 @@ router.get("/sign-up", (req, res) => {
 
 // get all videos for homepage
 router.get("/homepage", (req, res) => {
-  console.log("======================");
   Category.findAll({
     attributes: ["id", "title"],
     include: [
@@ -34,13 +31,8 @@ router.get("/homepage", (req, res) => {
     const categories = dbcategoryData.map((category) =>
       category.get({ plain: true })
     );
+    // console.log(categories);
 
-    for (let i = 0; i < categories.length; ++i) {
-      console.log(categories[i].title);
-      console.log(categories[i].videos);
-    }
-
-    console.log(categories);
     // pass data to template
     res.render("homepage", { categories });
   });
@@ -63,7 +55,8 @@ router.get("/category/:id", (req, res) => {
   }).then((dbcategoryData) => {
     // serialize the data
     const category = dbcategoryData.get({ plain: true });
-    console.log(category);
+    // console.log(category);
+
     // pass data to template
     res.render("category", { category });
   });
@@ -71,7 +64,31 @@ router.get("/category/:id", (req, res) => {
 
 // get all videos for favorites dashboard
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  const userId = req.session.user_id;
+
+  User.findOne({
+    where: {
+      id: userId,
+    },
+    attributes: ["username"],
+    include: [
+      {
+        model: Fav,
+        attributes: ["video_id"],
+        include: {
+          model: Video,
+          attributes: ["thumbnail", "video_id"],
+        },
+      },
+    ],
+  }).then((dbuserData) => {
+    // serialize the data
+    const user = dbuserData.get({ plain: true });
+    // console.log(user);
+
+    // pass data to template
+    res.render("dashboard", { user });
+  });
 });
 
 // get one video by id
@@ -84,7 +101,7 @@ router.get("/video/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "video_id", "user_id"],
+        attributes: ["id", "comment_text", "created_at", "video_id", "user_id"],
         include: {
           model: User,
           attributes: ["username"],
@@ -104,6 +121,7 @@ router.get("/video/:id", (req, res) => {
 
       // serialize the data
       const video = dbVideoData.get({ plain: true });
+      // console.log(video);
 
       // pass data to template
       res.render("single-video", { video });
