@@ -114,7 +114,9 @@ router.put("/fav", (req, res) => {
   if (req.session) {
     // pass session id along with all destructured properties on req.body
     Video.fav({ ...req.body, user_id: req.session.user_id }, { Fav, User })
-      .then((updatedFavData) => res.json(updatedFavData))
+      .then((updatedFavData) => {
+        res.json(updatedFavData);
+      })
       .catch((err) => {
         console.log(err);
         res.status(500).json(err);
