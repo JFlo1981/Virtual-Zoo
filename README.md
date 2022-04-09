@@ -75,7 +75,7 @@ I'm a full stack developer...
 
 ## Demo
 
-Insert gif or link to demo....
+Insert a gif or link to demo....
 
 
 ## Deployment
@@ -95,4 +95,5 @@ What did you learn while building this project? What challenges did you face and
 ## Support
 
 For support, email fake@fake.com or join our Slack channel.
+
 
