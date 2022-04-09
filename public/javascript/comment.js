@@ -12,7 +12,7 @@ async function commentFormHandler(event) {
     window.location.toString().split("/").length - 1
   ];
 
-  console.log(comment_text, video_id);
+  console.log("============LOOK HERE============", comment_text, video_id);
 
   if (comment_text) {
     const response = await fetch("/api/comments", {
