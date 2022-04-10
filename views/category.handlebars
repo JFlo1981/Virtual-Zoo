@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-Title">
-    <h3 class="text-light ">Zoolander</h3>
+    <h3 class="text-light">Zoolander</h3>
   </div>
   <div class="float-right" style="padding-right: 40px;">
     <ul>
@@ -11,13 +11,14 @@
         <a href="/dashboard" class="text-light">Favorites</a>
       </li>
       <li>
-        <a href="/inProgress" class="text-light">Support</a>
+        <a href="/support" class="text-light">Support</a>
       </li>
       <li>
-        <a href="/inProgress" class="text-light">Shop</a>
-      </li>
-      <li>
-        <button id="logout" style="background-color: transparent; border-style: none; color: white" class="btn-no-style">Logout</button>
+        <button
+          id="logout"
+          style="background-color: transparent; border-style: none; color: white"
+          class="btn-no-style"
+        >Logout</button>
       </li>
     </ul>
   </div>
@@ -26,19 +27,19 @@
 <!-- SEARCH FOR THE CATEGORY AND JOIN VIDEO TABLE THROUGH FOREIGN KEY? -->
 
 <section style="background-color: #111112">
-  <div style="
+  <div
+    style="
   width: 100%;
   height: 300px;
   background-size: cover;
   background-image: url({{category.imagePath}});
-  ">
+  "
+  >
     <div class="container">
-      <div
-        class="row d-flex justify-content-center"
-        style="padding-top: 50px"
-      >
-        <h1 class="col-12 category_Title" style="color: white"> {{category.title}}</h1>
-        <p class="category_page_description col-8">
+      <div class="row d-flex justify-content-center" style="padding-top: 50px">
+        <h1 class="col-12 category_Title" style="color: white">
+          {{category.title}}</h1>
+        <p class="category_page_description col-10">
           {{category.description}}
         </p>
       </div>
@@ -51,15 +52,15 @@
 
       <!-- FOR EACH VIDEO, CREATE A VIDEO-CARD WITH THUMBNAIL AND ID -->
       {{#each category.videos}}
-      <div id="category-video-card" class="col-lg-4 p-3">
-        <a href="/video/{{id}}">
-        <img
-          src="{{thumbnail}}"
-          class="col-12 p-3"
-          style="border-radius: 25px"
-        />
-        </a>
-      </div>
+        <div id="category-video-card" class="col-lg-4 p-3">
+          <a href="/video/{{id}}">
+            <img
+              src="{{thumbnail}}"
+              class="col-12 p-3"
+              style="border-radius: 25px"
+            />
+          </a>
+        </div>
       {{/each}}
 
     </div>
@@ -69,7 +70,7 @@
 <script src="/javascript/logout.js"></script>
 
 <footer>
-  <span style="color: #d7d4d4b4">Thanks for visiting!</span> © Zoolander
-  Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna Learn About
-  Cool Animals And Other Stuff Too
+  <span style="color: #d7d4d4b4">Thanks for visiting!</span>
+  © Zoolander Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna
+  Learn About Cool Animals And Other Stuff Too
 </footer>

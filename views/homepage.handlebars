@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-Title">
-    <h3 class="text-light ">Zoolander</h3>
+    <h3 class="text-light">Zoolander</h3>
   </div>
   <div class="float-right" style="padding-right: 40px;">
     <ul>
@@ -11,10 +11,7 @@
         <a href="/dashboard" class="text-light">Favorites</a>
       </li>
       <li>
-        <a href="/inProgress" class="text-light">Support</a>
-      </li>
-      <li>
-        <a href="/inProgress" class="text-light">Shop</a>
+        <a href="/support" class="text-light">Support</a>
       </li>
       <li>
         <button id="logout" style="background-color: transparent; border-style: none; color: white" class="btn-no-style">Logout</button>
@@ -23,7 +20,7 @@
   </div>
 </nav>
 
-<!-- HOMEPAGE BACKGROUND/WELCOME -->
+<!-- HOMEPAGE WELCOME -->
 <section class="home-page">      
 
   <div id="home-hero">
@@ -50,6 +47,11 @@
     freeMode: true,
     speed: 500,
     breakpoints: {
+      // when window width is >= 200px
+      200: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
       // when window width is >= 560px
       560: {
         slidesPerView: 2,

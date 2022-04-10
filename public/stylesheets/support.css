@@ -1,0 +1,187 @@
+.b0dy {
+    background-color: #1f1e1f;
+    display: flex;
+    min-height: 100vh;
+}
+
+.support-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 25vw;
+    margin: 1.5%;
+}
+
+.card-img-top {
+    height: 30vh;
+}
+
+.navTitle {
+    margin: 0px;
+    float: left;
+}
+
+h3.text-light {
+    font-size: 30px;
+}
+
+@media screen and (min-width:981px) {
+    .marGin {
+        margin: 0px 60px;
+    }
+
+    .card {
+        width: 20vw;
+        margin: 1.5%;
+    }
+}
+
+/* MEDIA QUERY FOR 980px */
+@media screen and (max-width: 980px) {
+    .card-img-top {
+        height: 24vh;
+    }
+
+    .marGin {
+        margin: 0px 50px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 8px;
+    }
+
+    a.btn {
+        font-size: 12px;
+    }
+}
+
+/* MEDIA QUERY FOR 575px */
+@media screen and (max-width: 575px) {
+    .card-title {
+        font-size: 16px;
+        width: 120%;
+    }
+
+    .card-text {
+        font-size: 8px;
+    }
+
+    a.btn {
+        font-size: 12px;
+    }
+
+    .marGin {
+        margin: 0px 40px;
+    }
+
+    h3.text-light {
+        font-size: 20px;
+    }
+}
+
+/* MEDIA QUERY FOR 520px */
+@media screen and (max-width: 520px) {
+    .card-img-top {
+        height: 18vh;
+    }
+
+    .card-title {
+        font-size: 12px;
+        width: 120%;
+    }
+
+    .card-text {
+        font-size: 6px;
+    }
+
+    a.btn {
+        font-size: 9px;
+    }
+
+    .marGin {
+        margin: 0px 30px;
+    }
+
+    h3.pt-4 {
+        font-size: 22px;
+    }
+}
+
+/* MEDIA QUERY FOR 412px */
+@media screen and (max-width: 412px) {
+    a.btn {
+        font-size: 7px;
+    }
+
+    .card-title {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    .card-text {
+        font-size: 6px;
+    }
+
+    div.card-body {
+        padding: 10px;
+    }
+
+    h3.pt-4 {
+        font-size: 20px;
+    }
+
+    nav li {
+        padding: 8px;
+    }
+
+    h3.text-light {
+        font-size: 16px;
+    }
+}
+
+/* MEDIA QUERY FOR 343px */
+@media screen and (max-width: 343px) {
+    .card-img-top {
+        height: 12vh;
+    }
+
+    a.btn {
+        font-size: 6px;
+    }
+
+    .card-title {
+        font-size: 8px;
+        width: 100%;
+    }
+
+    .card-text {
+        font-size: 6px;
+    }
+
+    div.card-body {
+        padding: 8px;
+    }
+
+    h3.pt-4 {
+        font-size: 16px;
+    }
+
+    .marGin {
+        margin: 0px 20px;
+    }
+
+    nav li {
+        padding: 6px;
+    }
+
+    nav li a {
+        font-size: 8px;
+    }
+}

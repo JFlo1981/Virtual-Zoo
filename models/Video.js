@@ -11,34 +11,7 @@ class Video extends Model {
         where: {
           id: body.video_id,
         },
-        attributes: [
-          "id",
-          "video_url",
-          "title",
-          "created_at",
-          [
-            sequelize.literal(
-              "(SELECT COUNT(*) FROM vote WHERE video.id = fav.video_id)"
-            ),
-            /*'vote_count'*/
-          ],
-        ],
-        include: [
-          {
-            model: models.Comment,
-            attributes: [
-              "id",
-              "comment_text",
-              "video_id",
-              "user_id",
-              "created_at",
-            ],
-            include: {
-              model: models.User,
-              attributes: ["username"],
-            },
-          },
-        ],
+        attributes: ["id", "description", "path", "thumbnail", "category_id"],
       });
     });
   }
