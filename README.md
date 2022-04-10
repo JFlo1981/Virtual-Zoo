@@ -72,7 +72,7 @@ our growing knowledge and skills in the world of web development.
 We utilize agile development to quickly and effectively bring ideas to life
 on screens and devices around the globe.
 
-######------------------------------------------------------------------------------------------------
+###### ------------------------------------------------------------------------------------------------
 ##### &copy; 2022, Tiergarten Design Group 
 
 
