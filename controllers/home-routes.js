@@ -5,7 +5,7 @@ const { Video, User, Comment, Fav, Category } = require("../models");
 // Log in route
 router.get("/", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/homepage");
+    res.render("/homepage");
     return;
   }
   res.render("login");
