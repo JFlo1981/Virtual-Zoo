@@ -155,6 +155,7 @@ footer {
   .category_Title {
     padding-top: 5px;
   }
+
   #home-hero {
     padding-bottom: 100px;
   }
@@ -165,6 +166,7 @@ footer {
   #home-hero {
     background-image: url(../images/homepage_md.png);
   }
+
   #home-hero {
     padding-bottom: 80px;
   }
@@ -182,17 +184,29 @@ footer {
   #home-hero h1 {
     font-size: 20px;
   }
+
   #home-hero p {
     font-size: 15px;
   }
+
   nav a {
     font-size: 10px;
   }
+
   #logout {
     font-size: 10px;
   }
+
   .nav-Title h3 {
     font-size: 15px;
+  }
+
+  .category_page_description {
+    font-size: 16px;
+  }
+
+  .category_Title {
+    font-size: 30px;
   }
 }
 
@@ -208,12 +222,15 @@ footer {
   #home-hero {
     padding-bottom: 70px;
   }
+
   #home-hero h1 {
     font-size: 15px;
   }
+
   #home-hero p {
     font-size: 10px;
   }
+
   .nav-Title h3 {
     font-size: 10px;
   }
@@ -224,6 +241,7 @@ footer {
   nav {
     height: 60px;
   }
+
   #home-hero {
     padding-bottom: 10px;
   }
@@ -234,7 +252,16 @@ footer {
   nav {
     height: 55px;
   }
+
   #home-hero {
     padding-bottom: 0px;
+  }
+
+  .category_page_description {
+    font-size: 12px;
+  }
+
+  .category_Title {
+    font-size: 24px;
   }
 }

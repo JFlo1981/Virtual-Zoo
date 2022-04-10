@@ -54,11 +54,6 @@ h3.text-light {
     }
 }
 
-/* MEDIA QUERY FOR 768px */
-@media screen and (max-width: 886px) {
-
-}
-
 /* MEDIA QUERY FOR 575px */
 @media screen and (max-width: 575px) {
     .card-title {
@@ -128,11 +123,6 @@ h3.text-light {
     }
 }
 
-/* MEDIA QUERY FOR 360px */
-@media screen and (max-width: 360px) {
-
-}
-
 /* MEDIA QUERY FOR 343px */
 @media screen and (max-width: 343px) {
     .card-img-top {
@@ -163,9 +153,4 @@ h3.text-light {
     nav li a {
         font-size: 8px;
     }
-}
-
-/* MEDIA QUERY FOR 280px */
-@media screen and (max-width: 280px) {
-
 }
