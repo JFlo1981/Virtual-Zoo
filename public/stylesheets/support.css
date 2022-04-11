@@ -1,7 +1,8 @@
 .b0dy {
     background-color: #1f1e1f;
+    background-size: cover;
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .support-section {
@@ -11,12 +12,12 @@
 }
 
 .card {
-    width: 25vw;
+    width: 20rem;
     margin: 1.5%;
 }
 
 .card-img-top {
-    height: 30vh;
+    height: 100%;
 }
 
 .navTitle {
@@ -34,7 +35,7 @@ h3.text-light {
     }
 
     .card {
-        width: 20vw;
+        /* width: 50%; */
         margin: 1.5%;
     }
 }
@@ -42,7 +43,7 @@ h3.text-light {
 /* MEDIA QUERY FOR 980px */
 @media screen and (max-width: 980px) {
     .card-img-top {
-        height: 24vh;
+        /* height: 100%; */
     }
 
     .marGin {
@@ -50,31 +51,31 @@ h3.text-light {
     }
 
     .card-title {
-        font-size: 16px;
+        font-size: 26px;
     }
 
     .card-text {
-        font-size: 8px;
+        font-size: 28px;
     }
 
     a.btn {
-        font-size: 12px;
+        font-size: 22px;
     }
 }
 
 /* MEDIA QUERY FOR 575px */
 @media screen and (max-width: 575px) {
     .card-title {
-        font-size: 16px;
-        width: 120%;
+        font-size: 26px;
+        /* width: 120%; */
     }
 
     .card-text {
-        font-size: 8px;
+        font-size: 18px;
     }
 
     a.btn {
-        font-size: 12px;
+        font-size: 22px;
     }
 
     .marGin {
@@ -89,20 +90,20 @@ h3.text-light {
 /* MEDIA QUERY FOR 520px */
 @media screen and (max-width: 520px) {
     .card-img-top {
-        height: 18vh;
+        /* height: 18vh; */
     }
 
     .card-title {
-        font-size: 12px;
-        width: 120%;
+        font-size: 22px;
+        /* width: 120%; */
     }
 
     .card-text {
-        font-size: 6px;
+        font-size: 16px;
     }
 
     a.btn {
-        font-size: 9px;
+        font-size: 20px;
     }
 
     .marGin {
@@ -110,7 +111,7 @@ h3.text-light {
     }
 
     h3.pt-4 {
-        font-size: 22px;
+        font-size: 32px;
     }
 }
 
@@ -121,12 +122,12 @@ h3.text-light {
     }
 
     .card-title {
-        font-size: 10px;
-        width: 100%;
+        font-size: 20px;
+        /* width: 100%; */
     }
 
     .card-text {
-        font-size: 6px;
+        font-size: 16px;
     }
 
     div.card-body {
@@ -134,7 +135,9 @@ h3.text-light {
     }
 
     h3.pt-4 {
-        font-size: 20px;
+        margin-top: 4rem;
+        height: 8rem;
+        font-size: 28px;
     }
 
     nav li {
@@ -142,27 +145,36 @@ h3.text-light {
     }
 
     h3.text-light {
-        font-size: 16px;
+        font-size: 26px;
     }
 }
 
 /* MEDIA QUERY FOR 343px */
 @media screen and (max-width: 343px) {
     .card-img-top {
-        height: 12vh;
+        height: 14rem;
+    }
+    
+    nav {
+        height: 4rem;
     }
 
     a.btn {
-        font-size: 6px;
+        font-size: 16px;
+    }
+
+    .card {
+        width: 14rem;
+        margin: 1.5%;
     }
 
     .card-title {
-        font-size: 8px;
-        width: 100%;
+        font-size: 18px;
+        /* width: 100%; */
     }
 
     .card-text {
-        font-size: 6px;
+        font-size: 16px;
     }
 
     div.card-body {
@@ -170,7 +182,7 @@ h3.text-light {
     }
 
     h3.pt-4 {
-        font-size: 16px;
+        font-size: 26px;
     }
 
     .marGin {
@@ -182,6 +194,6 @@ h3.text-light {
     }
 
     nav li a {
-        font-size: 8px;
+        font-size: 18px;
     }
 }
