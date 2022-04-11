@@ -42,7 +42,9 @@ bringing elephants, sea creatures and some loveable furry friends right into the
   
 ##### (Click image for deployment @ Heroku)  
   
-[![image](https://github.com/JFlo1981/Virtual-Zoo/blob/d5e5b4b3636c59340d0e4492903937bb81a621b6/public/images/Screen_zoolander.jpg)](https://virtual-zoo-1234.herokuapp.com/)
+[![Screen_zoolander](https://user-images.githubusercontent.com/88595179/162673531-8ed54aa8-109c-49bb-b1ee-ca90a364ec81.jpg)](https://virtual-zoo-1234.herokuapp.com/)
+
+
   
 ## Badges
   
