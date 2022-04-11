@@ -31,7 +31,7 @@
 nav {
   padding-top: 10px;
   width: 100%;
-  height: 50px;
+  height: 5rem;
   background: #1e1e1f;
   position: fixed;
   top: 0;
@@ -40,7 +40,7 @@ nav {
 
 .nav-Title {
   float: left;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 nav li {
@@ -177,6 +177,12 @@ footer {
   #home-hero {
     background-image: url(../images/homepage_sm.png);
   }
+  nav img {
+    width: 9.5rem;
+    height: auto;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
 
 /* MEDIA QUERY FOR 520px */
@@ -208,12 +214,26 @@ footer {
   .category_Title {
     font-size: 30px;
   }
+  nav img {
+    width: 7rem;
+    height: auto;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
 }
 
 /* MEDIA QUERY FOR 412px */
 @media screen and (max-width: 412px) {
   #home-hero {
     padding-top: 70px;
+    margin-top: 20px;
+  }
+  nav img {
+    width: 7.5rem;
+    height: auto;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -234,6 +254,13 @@ footer {
   .nav-Title h3 {
     font-size: 10px;
   }
+
+  nav img {
+    width: 6.5rem;
+    height: auto;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
 
 /* MEDIA QUERY FOR 343px */
@@ -242,8 +269,16 @@ footer {
     height: 60px;
   }
 
+  nav img {
+    width: 5.5rem;
+    height: auto;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
   #home-hero {
     padding-bottom: 10px;
+    margin-top: 10px;
   }
 }
 
@@ -251,6 +286,13 @@ footer {
 @media screen and (max-width: 280px) {
   nav {
     height: 55px;
+  }
+
+  nav img {
+    width: 3.5rem;
+    height: auto;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
   }
 
   #home-hero {
