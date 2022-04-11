@@ -18,14 +18,14 @@ Video.belongsTo(User, {
 User.belongsToMany(Video, {
   through: Fav,
   as: "fav_videos",
-  foreignKey: "user_id",
+  foreignKey: "video_id",
   onDelete: "SET NULL",
 });
 
 Video.belongsTo(User, {
   through: Fav,
   as: "fav_videos",
-  foreignKey: "video_id",
+  foreignKey: "user_id",
   onDelete: "SET NULL",
 });
 

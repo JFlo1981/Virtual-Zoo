@@ -155,6 +155,10 @@ footer {
   .category_Title {
     padding-top: 5px;
   }
+
+  #home-hero {
+    padding-bottom: 100px;
+  }
 }
 
 /* MEDIA QUERY FOR 768px */
@@ -162,11 +166,102 @@ footer {
   #home-hero {
     background-image: url(../images/homepage_md.png);
   }
+
+  #home-hero {
+    padding-bottom: 80px;
+  }
 }
 
 /* MEDIA QUERY FOR 575px */
 @media screen and (max-width: 575px) {
   #home-hero {
     background-image: url(../images/homepage_sm.png);
+  }
+}
+
+/* MEDIA QUERY FOR 520px */
+@media screen and (max-width: 520px) {
+  #home-hero h1 {
+    font-size: 20px;
+  }
+
+  #home-hero p {
+    font-size: 15px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  #logout {
+    font-size: 10px;
+  }
+
+  .nav-Title h3 {
+    font-size: 15px;
+  }
+
+  .category_page_description {
+    font-size: 16px;
+  }
+
+  .category_Title {
+    font-size: 30px;
+  }
+}
+
+/* MEDIA QUERY FOR 412px */
+@media screen and (max-width: 412px) {
+  #home-hero {
+    padding-top: 70px;
+  }
+}
+
+/* MEDIA QUERY FOR 360px */
+@media screen and (max-width: 360px) {
+  #home-hero {
+    padding-bottom: 70px;
+  }
+
+  #home-hero h1 {
+    font-size: 15px;
+  }
+
+  #home-hero p {
+    font-size: 10px;
+  }
+
+  .nav-Title h3 {
+    font-size: 10px;
+  }
+}
+
+/* MEDIA QUERY FOR 343px */
+@media screen and (max-width: 343px) {
+  nav {
+    height: 60px;
+  }
+
+  #home-hero {
+    padding-bottom: 10px;
+  }
+}
+
+/* MEDIA QUERY FOR 280px */
+@media screen and (max-width: 280px) {
+  nav {
+    height: 55px;
+  }
+
+  #home-hero {
+    padding-bottom: 0px;
+  }
+
+  .category_page_description {
+    font-size: 12px;
+  }
+
+  .category_Title {
+    font-size: 24px;
   }
 }

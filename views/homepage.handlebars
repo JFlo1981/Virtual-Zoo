@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-Title">
-    <h3 class="text-light ">Zoolander</h3>
+    <h3 class="text-light">Zoolander</h3>
   </div>
   <div class="float-right" style="padding-right: 40px;">
     <ul>
@@ -47,6 +47,11 @@
     freeMode: true,
     speed: 500,
     breakpoints: {
+      // when window width is >= 200px
+      200: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
       // when window width is >= 560px
       560: {
         slidesPerView: 2,
