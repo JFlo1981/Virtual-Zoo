@@ -1,9 +1,6 @@
 <p align="center">
-  <img width="460" height="450" src="https://seeklogo.com/images/E/elephant-logo-143883DEFC-seeklogo.com.png">
+  <img width="600" height="188" src="public/images/logo_zoolander.png">
 </p>
-
-
-
 
 # Zoolander Virtual Zoo
   
