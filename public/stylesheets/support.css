@@ -113,6 +113,10 @@ h3.text-light {
     h3.pt-4 {
         font-size: 32px;
     }
+
+    nav li a {
+        font-size: 12px;
+    }
 }
 
 /* MEDIA QUERY FOR 412px */
@@ -141,12 +145,18 @@ h3.text-light {
     }
 
     nav li {
-        padding: 8px;
+        padding: 4px;
     }
 
     h3.text-light {
         font-size: 26px;
     }
+
+    nav li a {
+        font-size: 10px;
+    }
+
+    
 }
 
 /* MEDIA QUERY FOR 343px */
@@ -185,15 +195,19 @@ h3.text-light {
         font-size: 26px;
     }
 
+    h3.text-light{
+        font-size: 20px;
+    }
+
     .marGin {
         margin: 0px 20px;
     }
 
     nav li {
-        padding: 6px;
+        padding: 3px;
     }
 
     nav li a {
-        font-size: 18px;
+        font-size: 10px;
     }
 }
