@@ -44,7 +44,7 @@ like button and comment section.
 ## HOW IT LOOKS! 
 ##### (Click image for deployment @ Heroku)
 
-[![image](https://user-images.githubusercontent.com/88595179/162595650-9bf67b7b-5d2f-44fb-9f88-94fc6b9e301b.png)](https://virtual-zoo-1234.herokuapp.com/)
+[![image](https://github.com/JFlo1981/Virtual-Zoo/blob/d5e5b4b3636c59340d0e4492903937bb81a621b6/public/images/Screen_zoolander.jpg)](https://virtual-zoo-1234.herokuapp.com/)
 
 ## Badges
 
